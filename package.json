@@ -13,7 +13,7 @@
     "version": "7.0.0-rc1"
   },
   "dependencies": {
-    "bulma-stylus": "0.8.0",
+    "bulma-stylus": "0.9.1",
     "hexo": "^7.0.0-rc1",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
