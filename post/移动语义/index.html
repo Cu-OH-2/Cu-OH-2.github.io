@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>移动语义 学习笔记 - 502 Bad Gateway</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="502 Bad Gateway"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/104898033"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="502 Bad Gateway"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="移动语义学习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="移动语义 学习笔记"><meta property="og:url" content="https://cu-oh-2.github.io/post/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><meta property="og:site_name" content="502 Bad Gateway"><meta property="og:description" content="移动语义学习笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cu-oh-2.github.io/img/og_image.png"><meta property="article:published_time" content="2024-05-04T00:00:00.000Z"><meta property="article:modified_time" content="2024-06-10T07:57:01.323Z"><meta property="article:author" content="Cu_OH_2"><meta property="article:tag" content="C++11"><meta property="article:tag" content="移动语义"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cu-oh-2.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cu-oh-2.github.io/post/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"},"headline":"移动语义 学习笔记","image":["https://cu-oh-2.github.io/img/og_image.png"],"datePublished":"2024-05-04T00:00:00.000Z","dateModified":"2024-06-10T07:57:01.323Z","author":{"@type":"Person","name":"Cu_OH_2"},"publisher":{"@type":"Organization","name":"502 Bad Gateway","logo":{"@type":"ImageObject","url":{"text":"502 Bad Gateway"}}},"description":"移动语义学习笔记"}</script><link rel="canonical" href="https://cu-oh-2.github.io/post/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><link rel="icon" href="https://avatars.githubusercontent.com/u/104898033"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0-rc1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">502 Bad Gateway</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-05-04T00:00:00.000Z" title="5/4/2024, 12:00:00 AM">2024-05-04</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div></div><h1 class="title is-3 is-size-4-mobile">移动语义 学习笔记</h1><div class="content"><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>移动语义是 <strong>C++11</strong> 引入的一项特性，允许在不进行深拷贝的情况下将一个对象资源的所有权转移给另一个对象，从而提高程序的效率。</p>
+<h2 id="左值和右值"><a href="#左值和右值" class="headerlink" title="左值和右值"></a>左值和右值</h2><p>C++ 的所有表达式都有两个属性：类型和值类别。</p>
+<p>在 C++98 中，表达式的值类别只有左值和右值两种。其中可以取地址的变量属于左值（不一定能赋值，如 const 引用和字符串字面量），不能取地址的临时数值属于右值（如非字符串的字面量，非引用类型的函数返回值等）。</p>
+<p>自 C++11 起，所有表达式被分为三种基本值类别：</p>
+<ul>
+<li>纯右值：就是 C++98 中的右值</li>
+<li>左值：在 C++98 中的左值基础上新增了<strong>具名的</strong>右值引用</li>
+<li>亡值：随移动语义引入，指<strong>匿名的</strong>右值引用，如返回右值引用的函数表达式。“亡”代表其在完成初始化或赋值任务后就会消亡</li>
+</ul>
+<p>除了三种基本类别外，还有两种混合类别：</p>
+<ul>
+<li>右值：包含纯右值和亡值，不能作赋值运算符的左操作数</li>
+<li>泛左值：包括亡值和左值，可以通过评估确定对象或函数的标识的值</li>
+</ul>
+<h2 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h2><ul>
+<li>浅拷贝：由原对象创建一个新对象，但新对象只是一个指向原对象地址的引用</li>
+<li>深拷贝：由原对象创建一个新对象，并在内存中开辟一块新区域存放原对象所有内容的复制</li>
+</ul>
+<p>浅拷贝容易产生内存管理问题，而深拷贝容易产生效率问题。</p>
+<h2 id="左值引用和右值引用"><a href="#左值引用和右值引用" class="headerlink" title="左值引用和右值引用"></a>左值引用和右值引用</h2><ul>
+<li>左值引用（C++98）：<code>Type&amp; name = lvalue;</code>，相当于给左值取别名</li>
+<li>右值引用（C++11）：<code>Type&amp;&amp; name = rvalue;</code>，相当于给右值取别名</li>
+</ul>
+<blockquote>
+<p>const 左值引用可以引用右值，而右值引用想引用左值需要通过 <code>std::move()</code><br>非 const 左值引用只能引用非常量的左值，非 const 右值引用只能引用非常量的右值</p>
+</blockquote>
+<p>右值引用可以延长即将被销毁的匿名临时变量的生命周期，并使其具名、可取址、可修改。但右值引用更重要的一个作用是帮助实现移动语义和完美转发。</p>
+<h2 id="移动语义和-std-move"><a href="#移动语义和-std-move" class="headerlink" title="移动语义和 std::move()"></a>移动语义和 std::move()</h2><p>移动语义通过<strong>移动构造函数</strong>和<strong>移动赋值运算符</strong>实现。</p>
+<p>用户类通常会隐式生成默认移动构造函数，但对于复杂的类往往需要自己编写移动构造函数和移动赋值运算符，来确保：</p>
+<ol>
+<li>资源通过浅拷贝转移</li>
+<li>移动后原对象不再拥有资源</li>
+</ol>
+<p>移动构造函数和移动赋值运算符接收的参数都是一个右值引用，为了区别于拷贝语义，只有在传入参数为右值时才会调用。因此使用移动语义需要依靠 <code>std::move()</code>。<code>std::move()</code> 位于头文件 <code>&lt;utility&gt;</code>，作用是将一个左值强制转换为一个右值引用。无论是调用类的移动构造&#x2F;赋值时还是实现移动构造&#x2F;赋值时调用成员变量类的移动都可能需要用到 <code>std::move()</code>。个人理解 <code>std::move()</code> 本质上的作用就是触发移动语义。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="具名的右值引用属于左值"><a href="#具名的右值引用属于左值" class="headerlink" title="具名的右值引用属于左值"></a>具名的右值引用属于左值</h3><p>具名的右值引用本身属于左值。因此使用它进行对象构造的时候不会调用移动构造函数，而是会调用拷贝构造函数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此处 a 是左值，需要再转换成右值引用以调用 data 的移动构造</span></span><br><span class="line"><span class="built_in">A</span>(A&amp;&amp; a) : <span class="built_in">data</span>(std::<span class="built_in">move</span>(a.data)) &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="完美转发和-std-forward"><a href="#完美转发和-std-forward" class="headerlink" title="完美转发和 std::forward()"></a>完美转发和 std::forward()</h3><p>完美转发是一种编程技巧，指在编写泛型函数时通过模板类型推导保留实参的值类别，以针对不同的情况选择拷贝语义或移动语义。</p>
+<p>C++11 中，根据<strong>引用折叠</strong>规则，在发生类型推导 <code>template&lt;class T&gt;</code> 时，<code>T&amp;&amp;</code> 类型既可以引用左值（T被推导为左值引用），也可以引用右值（T被推导为原始类型），称为<strong>万能引用</strong>。利用这一特性，可以编写一个转发接口函数，根据推断出的值类别进行选择转发：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">wrapper</span><span class="params">(T&amp;&amp; arg)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">foo</span>(std::forward&lt;T&gt;(arg));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此处的 <code>std::forward()</code> 位于头文件 <code>&lt;utility&gt;</code>，作用是根据 T 将参数强制转换为左值引用或右值引用。</p>
+<blockquote>
+<p>引用折叠：类型推导时，若 T 为引用类型，<code>T&amp;&amp;</code> 的右值引用会与原引用根据一套规则进行折叠，例如 <code>int&amp; &amp;&amp;</code> 会被折叠为 <code>int&amp;</code></p>
+</blockquote>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>移动语义 学习笔记</p><p><a href="https://cu-oh-2.github.io/post/移动语义/">https://cu-oh-2.github.io/post/移动语义/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Cu_OH_2</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-05-04</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-06-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/C-11/">C++11</a><a class="link-muted mr-2" rel="tag" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/">移动语义</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">正则表达式 学习笔记</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="level-item">智能指针 学习笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/104898033" alt="Cu_OH_2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cu_OH_2</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Cu-OH-2" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="洛谷" href="https://www.luogu.com.cn/user/545900"><i class="fas fa-list"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Codeforces" href="https://codeforces.com/profile/Cu_OH_2"><i class="fas fa-code"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="牛客竞赛" href="https://ac.nowcoder.com/acm/contest/profile/562512097"><i class="fas fa-flag"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/renbaoshuo/hexo-for-oiers" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo for OIers</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%88%B7%E9%A2%98/"><span class="level-start"><span class="level-item">刷题</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-04T00:00:00.000Z">2024-06-04</time></p><p class="title"><a href="/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-03T00:00:00.000Z">2024-06-03</time></p><p class="title"><a href="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-27T00:00:00.000Z">2024-05-27</time></p><p class="title"><a href="/post/2024.5%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">2024.5 刷题笔记</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-17T00:00:00.000Z">2024-05-17</time></p><p class="title"><a href="/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-04T00:00:00.000Z">2024-05-04</time></p><p class="title"><a href="/post/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/">移动语义 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/STL/"><span class="tag">STL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="tag">智能指针</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><span class="tag">概率论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><span class="tag">移动语义</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">502 Bad Gateway</a><p class="is-size-7"><span>&copy; 2024 Cu_OH_2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="icon" href="/fab%20fa-github">icon</a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="url" href="https://github.com/Cu-OH-2">url</a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>《STL源码剖析》读书笔记 - 502 Bad Gateway</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="502 Bad Gateway"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/104898033"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="502 Bad Gateway"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="《STL源码剖析》读书笔记"><meta property="og:type" content="blog"><meta property="og:title" content="《STL源码剖析》读书笔记"><meta property="og:url" content="https://cu-oh-2.github.io/post/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/"><meta property="og:site_name" content="502 Bad Gateway"><meta property="og:description" content="《STL源码剖析》读书笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cu-oh-2.github.io/images/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E5%B0%81%E9%9D%A2.png"><meta property="article:published_time" content="2023-03-22T00:00:00.000Z"><meta property="article:modified_time" content="2024-06-10T07:57:01.323Z"><meta property="article:author" content="Cu_OH_2"><meta property="article:tag" content="C++"><meta property="article:tag" content="STL"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cu-oh-2.github.io/images/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E5%B0%81%E9%9D%A2.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cu-oh-2.github.io/post/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/"},"headline":"《STL源码剖析》读书笔记","image":["https://cu-oh-2.github.io/images/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E5%B0%81%E9%9D%A2.png"],"datePublished":"2023-03-22T00:00:00.000Z","dateModified":"2024-06-10T07:57:01.323Z","author":{"@type":"Person","name":"Cu_OH_2"},"publisher":{"@type":"Organization","name":"502 Bad Gateway","logo":{"@type":"ImageObject","url":{"text":"502 Bad Gateway"}}},"description":"《STL源码剖析》读书笔记"}</script><link rel="canonical" href="https://cu-oh-2.github.io/post/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/"><link rel="icon" href="https://avatars.githubusercontent.com/u/104898033"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0-rc1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">502 Bad Gateway</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/STL%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E5%B0%81%E9%9D%A2.png" alt="《STL源码剖析》读书笔记"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-22T00:00:00.000Z" title="3/22/2023, 12:00:00 AM">2023-03-22</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div></div><h1 class="title is-3 is-size-4-mobile">《STL源码剖析》读书笔记</h1><div class="content"><h2 id="第一章-STL概论与版本简介"><a href="#第一章-STL概论与版本简介" class="headerlink" title="第一章 - STL概论与版本简介"></a>第一章 - STL概论与版本简介</h2><ul>
+<li>STL标准模板库提供六大组件：容器（containers）、算法（algorithms）、迭代器（iterators）、仿函数（functors）、配接器（adapters）、配置器（allocators）。它们间的交互关系为：<strong>容器</strong>通过<strong>配置器</strong>取得数据储存空间，<strong>算法</strong>通过<strong>迭代器</strong>存取<strong>容器</strong>内容，<strong>仿函数</strong>可以协助<strong>算法</strong>完成不同的策略变化，<strong>配接器</strong>可以修饰或套接<strong>仿函数</strong>。</li>
+</ul>
+<h2 id="第二章-空间配置器"><a href="#第二章-空间配置器" class="headerlink" title="第二章 - 空间配置器"></a>第二章 - 空间配置器</h2><ul>
+<li><p>空间配置器是隐藏在所有容器背后负责配置空间的组件。</p>
+</li>
+<li><p>在使用容器时，我们通常不需要自己制定配置器，因为 STL 的每一个容器都已经指定了缺省空间配置器。</p>
+</li>
+<li><p>我们常用的 new operator 和 delete operator 都包含两个过程：</p>
+<ol>
+<li>调用 operator new&#x2F;operator delete 配置&#x2F;释放内存空间</li>
+<li>调用对象的构造函数&#x2F;析构函数。</li>
+</ol>
+<p>为了精密分工，STL 配置器将这两个过程区分开来：内存的配置与释放由 <code>alloc::allocate()</code> 和 <code>alloc::deallocate()</code> 负责，对象的构造和析构由 <code>::construct()</code> 和 <code>::destroy()</code> 负责。</p>
+</li>
+<li><p><code>construct()</code> 使用运算子 placement new，在指定位置构造对象。</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">construct</span><span class="params">(T1* p, <span class="type">const</span> T2&amp; value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">new</span>(p) <span class="built_in">T1</span>(value); <span class="comment">//placement new</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>destroy()</code> 有两个版本。第一个版本接受一个指针，调用单个对象的析构函数；第二个版本接受两个迭代器，意在批量析构一连串对象。但如果两迭代器指代的范围较大，一次次地调用无意义的构造函数将严重影响效率。所以第二版本使用 traits 技法（第三章）判断元素的数值型别，来决定如何操作。若该型别有 non-trivial destructor，则循环调用所有 destructor，反之则什么也不做。另外，第二版本还针对 char<em>、wchar_t</em> 型迭代器提供了特化版本。</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一版本</span></span><br><span class="line"><span class="function"><span class="keyword">template</span> <span class="keyword">class</span>&lt;T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">destroy</span><span class="params">(T* pointer)</span> </span>&#123;</span><br><span class="line">    pointer-&gt;~<span class="built_in">T</span>(); <span class="comment">//调用析构函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二版本</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> ForwardIterator&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">destroy</span><span class="params">(ForwardIterator first, ForwardIterator last)</span> </span>&#123;</span><br><span class="line">    __destroy(first, last, <span class="built_in">value_type</span>(first)); <span class="comment">//获得first对应数值型别</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//特化版</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">destroy</span><span class="params">(<span class="type">char</span>*, <span class="type">char</span>*)</span> </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">destroy</span><span class="params">(<span class="type">wchar_t</span>*, <span class="type">wchar_t</span>*)</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SGI STL 对空间配置与释放的设计理念是：</p>
+<ul>
+<li>向 system heap 要求空间</li>
+<li>考虑多线程状态（本书不讨论）</li>
+<li>考虑内存不足时的应变措施</li>
+<li>考虑过多“小型区块”可能造成的“内存碎片”问题</li>
+</ul>
+</li>
+<li><p>小型区块不仅会带来内存碎片（fragment）问题，还会带来管理内存需要额外负担（overhead）的问题。为了应对小型区块带来的问题，SGI STL 设计了双层级配置器：</p>
+<ul>
+<li>第一级配置器直接使用 <code>malloc()</code> 和 <code>free()</code> ，并在系统内存空间无法满足需求时，调用一个客端指定的函数（“内存不足处理例程”）进行处理。</li>
+<li>第二级配置器则视情况采取不同策略。如果需要的区块较大，超过 128bytes，就移交第一级配置器处理；如果需要的区块较小，就使用内存池（memory pool）管理，称为次层配置（sub-allocation）。<blockquote>
+<p>内存池是指在真正使用内存之前先分配一大块内存来形成一个“池”，留作备用。当有新的内存需求时，就从内存池中分出一部分内存块；若内存块不够，则再继续申请新的内存。这样做能够显著提升内存分配的效率。</p>
+</blockquote>
+</li>
+<li>次层配置方法：第二级配置器基于内存池维护16个自由链表（free-lists），各自管理大小分别为 8，16，24，…，128bytes 的小额区块。当客端释还小额区块时，就由配置器回收至对应链表中；当有小额区块的需求时，配置器主动将需求量上调至8的倍数，并从对应链表中调取一块区块。但为了管理维护链表，每个节点需要一块指针域。为了避免这样的内存浪费，STL利用了 C++ 作为非强类型语言而特有的常用技巧 union 。让每个节点一物二用：既可以是指向下一节点的指针，又可以是指向实际区块的指针。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自由链表节点结构</span></span><br><span class="line"><span class="keyword">union</span> <span class="title class_">obj</span> &#123;</span><br><span class="line">    <span class="keyword">union</span> <span class="title class_">obj</span>* free_list_link; <span class="comment">//未被分配时作指向下一节点的指针</span></span><br><span class="line">    <span class="type">char</span> client_data[<span class="number">1</span>]; <span class="comment">//被分配后作指向实际区块的指针</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+当有小额需求时，若自由链表中已经没有区块可用，它将从内存池中获取空间以增加节点。此时若内存池空间足够，则新增 20 个节点；若内存池空间不足但还能提供若干个节点，则新增相应数量节点。若内存池剩余空间已不足供给一个节点，则内存池会利用 <code>malloc()</code> 从堆空间（heap）中配置需求量两倍的内存，再附加一块随配置次数增加的附加内存。若 system heap 空间也不够了，则会先在有更大区块的自由链表中寻找，未找到再调用第一级配置器，利用 out-of-memory 处理机制，看是否有机会释放其他的内存拿来此处使用。最后如果还是失败，则抛出异常。</li>
+</ul>
+</li>
+<li><p>除 <code>construct()</code> 和 <code>destroy()</code> 外，还有三个内存基本处理函数： <code>uninitialized_copy()</code> 、 <code>uninitialized_fill()</code> 、 <code>uninitialized_fill_n()</code> 。</p>
+<ul>
+<li>它们分别对应 STL 算法中的 <code>copy()</code> &#x2F; <code>fill()</code> &#x2F; <code>fill_n()</code>（第六章）。</li>
+<li>它们可以在实现容器区间构造时被使用，将内存的配置与对象的构造行为分离开来。</li>
+<li>它们都具备“<em>commit or rollback</em>”语义，即要么构造出所有必要元素，要么不构造任何东西——若任何一个构造抛出异常，它们必须析构所有已产生的元素。</li>
+<li>在实现时，它们先使用 traits 技法（第三章）判断元素的数值型别是否为 POD（Plain Old Data）型别，也就是标量型别（scalar type）或传统的 C 结构体型别。POD 型别必定拥有 trivial constructor&#x2F;destructor&#x2F;copy&#x2F;assignment 函数，因此可以对 POD 型别采用最有效率的初值填写手法，而对 non-POD 型别采取最保险安全的做法。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第三章-迭代器概念与-Traits-编程技法"><a href="#第三章-迭代器概念与-Traits-编程技法" class="headerlink" title="第三章 - 迭代器概念与 Traits 编程技法"></a>第三章 - 迭代器概念与 Traits 编程技法</h2><ul>
+<li><p>STL 的中心思想在于，将容器与算法分离，彼此独立设计，最后再以一帖胶着剂将它们撮合在一起。而迭代器就扮演着这一胶着剂角色。《Dessign Patterns》一书对于 iterator 模式的定义如下：</p>
+<blockquote>
+<p>提供一种方法，使之能够依序巡访某个聚合物（容器）所含的各个元素，而又无需暴露该聚合物的内部表述方式。</p>
+</blockquote>
+<p>迭代器是一种行为类似指针的对象，其最常见的行为就是<strong>内容提领</strong>和<strong>成员访问</strong>。所以设计迭代器时最重要的工作就是重载 <code>operator*</code> 和 <code>operator-&gt;</code>。</p>
+</li>
+<li><p>在算法中运用迭代器时，很可能会需要知道与迭代器相关的对象类型，即<strong>相应型别</strong>（associate type） ，例如迭代器所指之物的类型 value_type 。但 C++ 不是强类型语言，无法直接地获得一个对象的类型。所以我们需要利用 template 的<strong>参数推导机制</strong>以及<strong>内嵌类型声明</strong>的技巧，“萃取”出相应型别。这就是 <strong>traits 编程技法</strong>。</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//参数推导机制举例</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> I&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">func</span><span class="params">(I iter)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">func_impl</span>(iter, *iter); <span class="comment">//将func的工作移往func_impl</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> I, <span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">func_impl</span><span class="params">(I iter, T t)</span> </span>&#123;</span><br><span class="line">    T tmp; <span class="comment">//成功推导出T，即迭代器所指之物的类型</span></span><br><span class="line">    <span class="comment">//...此处为func()原本应做的工作</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//参数推导机制只能推导参数类型，而不能推导函数返回值类型</span></span><br><span class="line"><span class="comment">//然而声明内嵌类型可以解决这个问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//内嵌类型声明举例</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">MyIter</span> &#123;</span><br><span class="line">    <span class="keyword">typedef</span> T value_type; <span class="comment">//内嵌类型声明</span></span><br><span class="line">    T* ptr;</span><br><span class="line">    <span class="built_in">MyIter</span>(T* p = <span class="number">0</span>): <span class="built_in">ptr</span>(p) &#123;&#125;</span><br><span class="line">    T&amp; <span class="keyword">operator</span>*() <span class="type">const</span> &#123; <span class="keyword">return</span> *ptr; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> I&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">typename</span> I::type_value <span class="title">func</span><span class="params">(I ite)</span> </span>&#123; <span class="keyword">return</span> *ite; &#125;</span><br><span class="line"><span class="comment">//typename I::type_value即为I所指之物类型，可作为返回值类型</span></span><br></pre></td></tr></table></figure>
+<p>  然而这两个技巧还无法完美解决问题。首先，STL 以及整个泛型思维都必须接受<strong>原生指针</strong>作为一种迭代器，而原生指针无法定义内嵌类型。其次，对于指向常数对象的指针 pointer-to-const，我们期望得到的 value_type 是 non-const 型别而不是 const 型别。为了解决这两个问题，我们还需要针对普通原生指针和指向常数的指针为泛化的 traits 方法提供<strong>偏特化</strong>版本。要想进行偏特化，首先需要将“萃取”过程交给一个 class template 来专门完成。</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//专用于“萃取”迭代器特性的class</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">I</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">iterator_traits</span> &#123;</span><br><span class="line">    <span class="keyword">typedef</span> <span class="keyword">typename</span> I::value_type value_type;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果I定义了自己的value_type，就可以被其“萃取”出来</span></span><br></pre></td></tr></table></figure>
+<p>  这样做让过程多了一层间接性，也使得偏特化可以在 iterator_traits 上进行。</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//针对原生指针的偏特化</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">iterator_traits</span>&lt;T*&gt; &#123;</span><br><span class="line">    <span class="keyword">typedef</span> T value_type;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//针对pointer-to-const的偏特化</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">iterator_traits</span>&lt;<span class="type">const</span> T*&gt; &#123;</span><br><span class="line">    <span class="keyword">typedef</span> T type_value; <span class="comment">//T为non-const型别</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>迭代器的五大相应型别为：value_type、difference_type、pointer_type、reference_type、iterator_category。为了符合规范，任何迭代器都应提供五个内嵌相应型别，否则可能无法与 STL 其他组件顺利搭配。</p>
+</li>
+<li><p>iterator_catagory：根据移动特性与施行操作，迭代器被分为五类。</p>
+<ul>
+<li>Input Iterator：所指对象不允许改变，只读</li>
+<li>Output Iterator：所指对象不允许改变，唯写</li>
+<li>Forward Iterator：可进行读写操作和单向迭代</li>
+<li>Bidirectional Iterator：可双向移动</li>
+<li>Random Access Iterator：涵盖所有指针算术能力</li>
+</ul>
+<div style="text-align: center;">
+  <img src="../../images/STL源码剖析/迭代器的分类与从属关系.png" alt="迭代器的分类与从属关系">
+</div>
+</li>
+<li><p>设计适当的相应型别是迭代器的责任，而设计适当的迭代器则是容器的责任。因为只有容器本身才知道应该设计出怎样的迭代器来遍历自己，并执行迭代器该有的各种行为。这也解释了为什么每一种 STL 容器都有自己的专属迭代器。至于算法，完全可以独立于容器和迭代器之外自行发展。</p>
+</li>
+</ul>
+<h2 id="第四章-序列式容器"><a href="#第四章-序列式容器" class="headerlink" title="第四章 - 序列式容器"></a>第四章 - 序列式容器</h2><ul>
+<li><p>序列式容器包含 C++ 语言本身提供的 array 和 STL 另外提供的 vector、list、deque、stack、queue、priority_queue。其中 stack 和 queue 由于只是将 deque 改造而成，技术上被归类为一种配接器。</p>
+</li>
+<li><p>vector：</p>
+<ul>
+<li>vector 与 array 的唯一差别在于对空间运用的灵活性，所以 vector 实现的关键在于空间扩充。</li>
+<li>vector 维护的数据结构是一个<strong>连续线性空间</strong>，直接使用普通指针作为迭代器，支持随机存取。所以 vector 提供的迭代器类型是 Random Access Iterators 。</li>
+<li>vector 在每次空间不足时会重新配置一块<strong>大小为原空间两倍</strong>的空间并将所有数据转移到新空间内。这样可以保证插入 $n$ 个元素的总时间复杂度为 $O(n)$。需要注意，引起空间重新配置时，原来的所有迭代器都会失效。</li>
+<li>vector 在 <code>pop_back()</code> 以及 <code>clear()</code> 等操作时会使用 <code>destroy()</code> 以调用元素对象的析构函数，但不会释放空间。</li>
+<li>vector 的其他操作实现原理等同于对线性数组的操作。</li>
+</ul>
+</li>
+<li><p>list：</p>
+<ul>
+<li>list 是一个<strong>双向链表</strong>，其内部维护一个<strong>带尾空白节点的双向循环链表</strong>，符合 STL 的“<strong>前闭后开</strong>”要求。</li>
+<li>list 的迭代器需要前移、后移，属于 Bidirectional Iterators ，因此不能直接使用普通指针。无论如何进行插入和接合操作，list 的迭代器都不会失效。</li>
+<li>list 有一个 list_node_allocator ，专门用以更方便地一次性配置一个节点的空间。</li>
+<li>list 的 <code>insert()</code> 操作会将新节点插入<strong>目标节点的前方</strong>，这符合 STL 的插入操作标准规范。</li>
+<li>list的 <code>splice()</code> 操作可以 $O(1)$ 地进行区间接合。</li>
+<li>list 不适用 STL 的 <code>sort()</code> ，但有自己的 <code>sort()</code> 成员函数，采用算法为<strong>快速排序</strong>。</li>
+</ul>
+</li>
+<li><p>deque：</p>
+<ul>
+<li>deque 是一个<strong>拥有双向开口</strong>的<strong>连续线性空间</strong>。deque 不具有“容量”概念，因为它内部动态地以分段连续空间（称为缓冲区，可以指定大小，默认为 512b）组合而成，随时可以增加并链接一段新空间。</li>
+<li>deque 采用一段连续空间作为主控（中控器），称为 map（与 STL 的 map 容器无关）。<ul>
+<li>map 中每个元素都是<strong>指向一段连续线性空间的指针</strong>。</li>
+<li>map 中的元素<strong>从最中央开始</strong>向两边扩展，以便同时处理在 deque 两边插入元素的情况。</li>
+<li>map 在空间不足时的扩充手段与 vector 类似。</li>
+</ul>
+</li>
+<li>deque 的迭代器属于 Random Access Iterator，但为了在多段连续空间上维护整体连续的假象，不能使用普通指针。deque 的迭代器保存的信息有：当前元素指针、当前缓冲区头指针、当前缓冲区尾指针、当前缓冲区对应中控器中节点的指针。这些信息配合 deque 中的 start 和 finish 迭代器，即可实现 $O(1)$ 随机访存。</li>
+<li>deque 自行定义了两个专属空间配置器：data_allocator、map_allocator。</li>
+<li>deque 在移除元素时，若缓冲区已空，将会释放缓冲区（除非只剩最后一个缓冲区）。</li>
+<li>deque在进行 <code>insert()</code> 和 <code>erase()</code> 操作时，将会根据插入位置前后元素数量判断数据移动策略。</li>
+</ul>
+</li>
+<li><p>stack：</p>
+<ul>
+<li>stack 不属于容器，而属于配接器，因为它是通过修改底部容器的接口实现的。</li>
+<li>stack 默认以 deque 作为底部结构，封闭其头端开口，只允许存取顶部元素，且不允许遍历，因此也没有迭代器。</li>
+<li>除 deque 外，stack 也可以以 list 为底部容器。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义以list为底部容器的stack</span></span><br><span class="line">stack&lt;<span class="type">int</span>, list&lt;<span class="type">int</span>&gt;&gt; stk;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>queue：</p>
+<ul>
+<li>queue 同样也是一种配接器，性质与 stack 几乎一致，唯一差别在于 queue 双向开口。</li>
+</ul>
+</li>
+<li><p>heap&#x2F;priority_queue：</p>
+<ul>
+<li>heap 不属于 STL 容器组件，但它负责作为 priority_queue 的底层机制。heap 以 vector 为底层容器，性质和相应算法与数据结构中的 heap 一致，此处略。heap 默认为大根堆。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第五章-关联式容器"><a href="#第五章-关联式容器" class="headerlink" title="第五章 - 关联式容器"></a>第五章 - 关联式容器</h2><ul>
+<li><p>STL 标准中的关联式容器包含 set、multiset、map、multimap，它们都是由红黑树 RB-tree 实现的。</p>
+<blockquote>
+<p>笔记作者补充：C++11 还提供了基于散列表 hashtable 的 unordered_map 和 unordered_set 。</p>
+</blockquote>
+</li>
+<li><p>RB-tree：</p>
+<ul>
+<li>RB-tree也是 STL 中的独立容器，原理与数据结构中的 RB-tree 相同，但并不开放外界使用。</li>
+<li>RB-tree 定义了专属空间配置器，可以一次性配置一个节点的空间。</li>
+<li>RB-tree 的节点包含实值 value 和键值 key，其中 key 是节点间进行比较的依据。</li>
+<li>为了简化边界情况的处理，SGI STL 特别为根节点再设计了一个父节点，称为 header，其左子节点指向最左节点，右子节点指向最右节点。</li>
+<li>RB-tree 的迭代器属于 Bidirectional Iterators。为了更大的弹性，RB-tree 的迭代器实现与 RB-tree 的节点实现分为对应的两层。</li>
+</ul>
+<div style="text-align: center;">
+  <img src="../../images/STL源码剖析/RB-tree的节点和迭代器之间的关系.png" alt="RB-tree的节点和迭代器之间的关系">
+</div>
+
+<ul>
+<li>RB-tree 的插入有 <code>insert_equal()</code>（可重复，插入相同值的最右方）和 <code>insert_unique()</code>（不可重复，若已有则不插入）两种。</li>
+</ul>
+</li>
+<li><p>set：</p>
+<ul>
+<li>set 中元素的 value 和 key 是等同的，不像 map 那样可以同时拥有 value 和 key。set 不允许两个元素拥有相同的 key 。我们不可通过 set 的迭代器改变元素的值，因为改变元素值的同时也改变了 key ，会破坏 set 内部的组织和有序性。也因此，set 的迭代器为 constant iterator。</li>
+<li>STL 为 set&#x2F;multiset 提供了一些集合算法：<code>set_intersection()</code> 、 <code>set_union()</code> 、 <code>set_difference()</code> 、 <code>set_symmetric_difference()</code>（第六章）。</li>
+</ul>
+</li>
+<li><p>map：</p>
+<ul>
+<li>map 的所有元素都是 pair，pair 中的第一元素为 key，第二元素为 value。map 不允许两个元素拥有相同的 key。我们可以修改 map 元素的 value，但不可以修改其 key。</li>
+</ul>
+</li>
+<li><p>multiset&#x2F;multimap：</p>
+<ul>
+<li>multiset&#x2F;multimap 与 set&#x2F;map 几乎相同，唯一区别在于插入时调用的是 <code>insert_equal()</code> ，即允许多个元素拥有相同的 key。</li>
+</ul>
+</li>
+<li><p>hashtable：</p>
+<ul>
+<li>SGI STL 的 hashtable 采用<strong>开链法</strong>处理哈希冲突。它维护一个基于 vector 的表，表中元素称为桶节点（bucket）。每个桶节点并不采用 STL list，而是自行维护一个由 hashtable node 组成的单向链表。</li>
+<li>hashtable 以质数作为表格大小，它提前将 28 个逐渐呈现约两倍关系的质数准备好，以备随时取用作为新表格大小。</li>
+<li>hashtable 的迭代器属于 Forward Iterator，可沿 bucket vector 及其中链表向下遍历，但无法后退。</li>
+<li>有些数据类型元素无法直接输入哈希函数，如字符串等，因此所有元素都需要统一先输入一个函数 <code>bkt_num()</code> ，由它进行转换并调用哈希函数。除整型、C 字符串类型外，其他数据类型都需要用户自定义哈希函数。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第六章-算法"><a href="#第六章-算法" class="headerlink" title="第六章 - 算法"></a>第六章 - 算法</h2><ul>
+<li><p>STL 算法分为质变算法（mutating algorithms）（需要对目标区间进行改变）和非质变算法（nonmutating algorithms）（不需要对目标区间进行改变）。其中部分质变算法会提供两个版本：in-place（就地改变）版和 copy（生成并返回副本）版。</p>
+</li>
+<li><p>STL 提供的算法几乎都是施行于一段连续元素空间的算法，接收的前两个参数通常是一对迭代器，用以标示算法的操作区间。STL 通常采用<strong>前闭后开</strong>区间表示法。每个 STL 算法的声明都表现出它所需要的最低程度的迭代器类型，若传入无效的迭代器，无法在编译时期被发现，且可能导致不可预知的结果。</p>
+</li>
+<li><p>STL 的算法都经过泛型化，只要传入的迭代器能够进行算法所需的操作，例如前进、后退、提领等，算法就能在任何数据类型和数据结构上完成。</p>
+</li>
+<li><p>部分算法概览（加粗为算法竞赛中常用算法）</p>
+<ul>
+<li><code>&lt;numeric&gt;</code><ul>
+<li><code>accumulate()</code>：计算所有元素与初始值进行二元运算的结果（默认为求和）</li>
+<li><code>adjacent_difference()</code>：构造差分序列</li>
+<li><code>partial_sum()</code>：构造前缀和序列</li>
+<li><code>inner_product()</code>：计算两向量内积</li>
+</ul>
+</li>
+<li><code>&lt;algorithm&gt;</code><ul>
+<li><code>equal()</code>：判断两序列相等</li>
+<li><strong><code>fill()</code></strong> &#x2F; <code>fill_n()</code>：将序列中所有元素&#x2F;前 n 个元素改填新值</li>
+<li><code>iter_swap()</code>：将两迭代器所指元素对调</li>
+<li><code>lexicographical_compare()</code>：字典序比较两序列</li>
+<li><strong><code>max()</code></strong> &#x2F; **<code>min()</code>**：最大值&#x2F;最小值</li>
+<li><code>mismatch()</code>：求两序列第一个失配点</li>
+<li>**<code>swap()</code>**：交换两对象内容</li>
+<li><code>copy()</code> &#x2F; <code>copy_backward()</code>：顺序&#x2F;倒序复制序列</li>
+<li><code>set_union()</code> &#x2F; <code>set_intersection()</code> &#x2F; <code>set_difference()</code> &#x2F; <code>set_symmetric_difference()</code>：集合并&#x2F;交&#x2F;差&#x2F;对称差</li>
+<li><code>make_heap()</code> &#x2F; <code>push_heap()</code> &#x2F; <code>pop_heap()</code> &#x2F; <code>sort_heap()</code>：堆实现算法</li>
+<li><code>adjacent_find()</code>：找出第一组满足指定条件的相邻元素（默认为相等）</li>
+<li><code>count()</code> &#x2F; <code>count_if()</code>：计算等于指定值&#x2F;满足指定条件的元素个数</li>
+<li><code>find()</code> &#x2F; <code>find_if()</code>：找出第一个等于指定值&#x2F;满足指定条件的元素</li>
+<li><code>for_each()</code>：将仿函数施行于序列上每一元素</li>
+<li><code>generate()</code> &#x2F; <code>generate_n()</code>将仿函数结果填写在序列所有元素&#x2F;前 n 个元素上</li>
+<li><strong><code>max_element()</code></strong> &#x2F; **<code>min_element()</code>**：找最大值&#x2F;最小值位置</li>
+<li><code>merge()</code>：合并有序序列到新序列</li>
+<li><code>replace()</code> &#x2F; <code>replace_copy()</code>：将旧值以新值取代&#x2F;在新序列上操作</li>
+<li><code>replace_if()</code> &#x2F; <code>replace_copy_if()</code>：取代满足条件的元素&#x2F;在新序列上操作</li>
+<li><strong><code>reverse()</code></strong> &#x2F; <code>reverse_copy()</code>：将序列倒序&#x2F;在新序列上操作</li>
+<li><code>rotate()</code> &#x2F; <code>rotate_copy()</code>：交换 $[begin,middle)$ 和 $[middle,last)$ &#x2F;在新序列上操作</li>
+<li><code>search()</code> &#x2F; <code>search_n()</code>：找出子序列&#x2F;子序列前 n 个元素的首匹配点</li>
+<li><code>swap_ranges()</code>：交换等长区间</li>
+<li><code>transform()</code>：将仿函数施行于序列并由结果产生一个新序列</li>
+<li><strong><code>unique()</code></strong> &#x2F; <code>unique_copy()</code>：移除重复元素并返回尾指针&#x2F;在新序列上操作</li>
+<li><strong><code>lower_bound()</code></strong> &#x2F; <strong><code>upper_bound()</code><strong>：在</strong>有序区间</strong>上二分查找第一个大于等于&#x2F;大于指定值的元素</li>
+<li><code>binary_search()</code>：在<strong>有序区间</strong>上二分查找指定值</li>
+<li><strong><code>next_permutation()</code></strong> &#x2F; <code>prev_permutation()</code>：将序列变为字典序升序下的下一个&#x2F;上一个排列，返回是否操作成功</li>
+<li>**<code>random_shuffle()</code>**：将序列随机打乱</li>
+<li><code>partial_sort()</code>：利用堆排序将最小的若干元素置于序列首端并排序，时间复杂度 $O(nlogm)$</li>
+<li><strong><code>sort()</code><strong>：排序。数据量大时采用</strong>快速排序</strong>，分段后对较小段采用<strong>插入排序</strong>，递归层次过深时采用<strong>堆排序</strong>。</li>
+<li><code>equal_range()</code>：在<strong>有序区间</strong>上二分查找等于指定值的元素区间</li>
+<li><code>inplace_merge()</code>：原地合并两段连续的<strong>有序序列</strong></li>
+<li><strong><code>nth_element()</code><strong>：使第 k 大元素在位置 k，且其前方元素都比其小，后方元素都比其大。使用算法类似</strong>快速排序</strong>的划分区间，但只划分 nth 所在区间，时间复杂度平均 $O(n)$，最坏 $O(n^2)$</li>
+<li><code>merge_sort()</code>：归并排序</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="第七章-仿函数"><a href="#第七章-仿函数" class="headerlink" title="第七章 - 仿函数"></a>第七章 - 仿函数</h2><ul>
+<li><p>仿函数也叫函数对象，是一种行为类似函数的对象，其类的定义中必须自定义 <code>operator()</code> 。</p>
+</li>
+<li><p>仿函数存在的意义：函数指针不能满足 STL 对抽象性的要求，也无法和 STL 其他组件如配接器搭配以产生更灵活的变化。仿函数的主要用途是搭配 STL 算法。</p>
+</li>
+<li><p>使用 STL 内置的仿函数需要包含 <code>&lt;functional&gt;</code></p>
+</li>
+<li><p>类似于迭代器，仿函数必须定义自己的<strong>相应型别</strong>才能获得<strong>可配接性</strong>，从而更好地融入 STL 体系。仿函数的相应型别主要用来表现<strong>函数参数类型</strong>和<strong>返回值类型</strong>。方便起见，STL 定义了两个类 unary_function、binary_function，分别代表一元仿函数和二元仿函数。</p>
+  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一元仿函数</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">Arg</span>, <span class="keyword">class</span> <span class="title class_">Result</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">unary_function</span> &#123;</span><br><span class="line">    <span class="keyword">typedef</span> Arg argument_type;</span><br><span class="line">    <span class="keyword">typedef</span> Result result_type; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//二元仿函数</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">Arg1</span>, <span class="keyword">class</span> <span class="title class_">Arg2</span>, <span class="keyword">class</span> <span class="title class_">Result</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">binary_function</span> &#123;</span><br><span class="line">    <span class="keyword">typedef</span> Arg1 first_argument_type;</span><br><span class="line">    <span class="keyword">typedef</span> Arg2 second_argument_type;</span><br><span class="line">    <span class="keyword">typedef</span> Result result_type; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>STL 规定，所有仿函数必须继承其中一种类型，以获得其相应型别信息。</p>
+</li>
+<li><p>算术类仿函数：加法 <code>plus&lt;T&gt;</code> 、减法 <code>minus&lt;T&gt;</code> 、乘法 <code>multiplies&lt;T&gt;</code> 、除法 <code>divides&lt;T&gt;</code> 、模 <code>modulus&lt;T&gt;</code> 、否定 <code>negate&lt;T&gt;</code></p>
+</li>
+<li><p>关系运算类仿函数：等于 <code>equal_to&lt;T&gt;</code> 、不等于 <code>not_equal_to&lt;T&gt;</code> 、大于 <code>greater&lt;T&gt;</code> 、大于等于 <code>greater_equal&lt;T&gt;</code> 、小于 <code>less&lt;T&gt;</code> 、小于等于 <code>less_equal&lt;T&gt;</code></p>
+</li>
+<li><p>逻辑运算类仿函数：逻辑与 <code>logical_and&lt;T&gt;</code> 、逻辑或 <code>logical_or&lt;T&gt;</code> 、逻辑非 <code>logical_not&lt;T&gt;</code></p>
+</li>
+<li><p>其他仿函数：证同（返回自身）<code>identity&lt;T&gt;</code> 、选择（返回 pair 的第一元素或第二元素） <code>select1st&lt;Pair&gt;</code> &#x2F; <code>select2nd&lt;Pair&gt;</code> 、投射（返回第一参数或第二参数）<code>project1st&lt;Arg1, Arg2&gt;</code> &#x2F; <code>project2nd&lt;Arg1, Arg2&gt;</code></p>
+</li>
+</ul>
+<h2 id="第八章-配接器"><a href="#第八章-配接器" class="headerlink" title="第八章 - 配接器"></a>第八章 - 配接器</h2><ul>
+<li><p>配接器的概念实际上是一种设计模式。《Design Patterns》一书对 adapter 样式的定义如下：</p>
+<blockquote>
+<p>将一个 class 的接口转换为另一个 class 的接口，使原本因接口不兼容而不能合作的 classes 可以一起运作。</p>
+</blockquote>
+</li>
+<li><p>STL 提供的配接器中，改变仿函数接口的称为 function adapter，改变容器接口的称为 container adapter，改变迭代器接口的称为 iterator adapter。</p>
+</li>
+<li><p>容器配接器：queue、stack（第四章）。</p>
+</li>
+<li><p>迭代器配接器：分为 insert iterators、reverse iterators、iostream iterators，他们的接口在 <code>&lt;iterator&gt;</code> 中。</p>
+<ul>
+<li>insert iterators 将一般迭代器的<strong>赋值操作</strong>转变为<strong>插入操作</strong>。包括负责尾端插入的 back_insert_iterator、负责首端插入的 front_insert_iterator、可进行任意位置插入的 insert_iterator。当客户端对 insert iterator 进行赋值操作时，insert iterator 会将其转为插入操作；并且，其他迭代器的惯常行为在 insert iterator 中都被关闭。</li>
+<li>reverse iterators 将一般迭代器的行进方向逆转，使 <code>operator++</code> 变成后退， <code>operator--</code> 变成前进。任何 STL 容器都提供有 <code>rbegin()</code> 和 <code>rend()</code> 这两个操作，它们返回反向遍历容器的迭代器，其中 <code>rbegin()</code> 指向尾元素，而 <code>rend()</code> 指向首元素的前驱元素。</li>
+<li>iostream iterators 可绑定到某个数据流（stream）对象身上，分为拥有输入功能的 istream_iterator 和拥有输出功能的 ostream_iterator。所谓绑定一个 istream object，其实就是在 istream iterator 内部维护一个 istream member，客户端对这个迭代器所做的 <code>operator++</code> 操作会被导引调用迭代器内部所含的 istream member 的输入操作 <code>operator&gt;&gt;</code> 。ostream_iterator 同理。</li>
+</ul>
+</li>
+<li><p>仿函数配接器：仿函数配接器是所有配接器中数量最庞大的，也是灵活性最强的，可以多次叠加配接。这些配接操作包括：绑定（bind）、否定（negate）、组合（compose）。仿函数的价值在于，通过他们之间的绑定组合，几乎可以无限制地创造出各种表达式，以搭配 STL 算法发挥作用。</p>
+</li>
+<li><p>一般函数经过 <code>ptr_fun()</code> 处理、成员函数经过 <code>mem_fun()</code> 处理，也都可以获得可配接性。</p>
+</li>
+<li><p>所有迭代器配接器和仿函数配接器都配有更直观好用的<strong>辅助函数</strong>，实际运用时通常不直接使用配接器对象而使用辅助函数接口。</p>
+<div style="text-align: center;">
+  <img src="../../images/STL源码剖析/迭代器配接器辅助函数.png" alt="迭代器配接器辅助函数表">
+</div>
+
+<div style="text-align: center;">
+  <img src="../../images/STL源码剖析/仿函数配接器辅助函数.png" alt="仿函数配接器极其辅助函数一览表">
+</div></li>
+</ul>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>《STL源码剖析》读书笔记</p><p><a href="https://cu-oh-2.github.io/post/STL源码剖析/">https://cu-oh-2.github.io/post/STL源码剖析/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Cu_OH_2</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-03-22</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-06-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/C/">C++</a><a class="link-muted mr-2" rel="tag" href="/tags/STL/">STL</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/2023%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">2023牛客暑期多校训练营 赛题总结</span></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/104898033" alt="Cu_OH_2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cu_OH_2</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Cu-OH-2" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="洛谷" href="https://www.luogu.com.cn/user/545900"><i class="fas fa-list"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Codeforces" href="https://codeforces.com/profile/Cu_OH_2"><i class="fas fa-code"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="牛客竞赛" href="https://ac.nowcoder.com/acm/contest/profile/562512097"><i class="fas fa-flag"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/renbaoshuo/hexo-for-oiers" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo for OIers</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%88%B7%E9%A2%98/"><span class="level-start"><span class="level-item">刷题</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-04T00:00:00.000Z">2024-06-04</time></p><p class="title"><a href="/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-03T00:00:00.000Z">2024-06-03</time></p><p class="title"><a href="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-27T00:00:00.000Z">2024-05-27</time></p><p class="title"><a href="/post/2024.5%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">2024.5 刷题笔记</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-17T00:00:00.000Z">2024-05-17</time></p><p class="title"><a href="/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-04T00:00:00.000Z">2024-05-04</time></p><p class="title"><a href="/post/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/">移动语义 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/STL/"><span class="tag">STL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="tag">智能指针</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><span class="tag">概率论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><span class="tag">移动语义</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">502 Bad Gateway</a><p class="is-size-7"><span>&copy; 2024 Cu_OH_2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="icon" href="/fab%20fa-github">icon</a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="url" href="https://github.com/Cu-OH-2">url</a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

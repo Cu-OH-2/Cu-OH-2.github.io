@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>2023杭电多校 赛题总结 - 502 Bad Gateway</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="502 Bad Gateway"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/104898033"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="502 Bad Gateway"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="2023杭电多校赛题总结"><meta property="og:type" content="blog"><meta property="og:title" content="2023杭电多校 赛题总结"><meta property="og:url" content="https://cu-oh-2.github.io/post/2023%E6%9D%AD%E7%94%B5%E5%A4%9A%E6%A0%A1/"><meta property="og:site_name" content="502 Bad Gateway"><meta property="og:description" content="2023杭电多校赛题总结"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cu-oh-2.github.io/images/icpc.png"><meta property="article:published_time" content="2023-10-07T00:00:00.000Z"><meta property="article:modified_time" content="2024-06-10T07:57:01.323Z"><meta property="article:author" content="Cu_OH_2"><meta property="article:tag" content="算法"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cu-oh-2.github.io/images/icpc.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cu-oh-2.github.io/post/2023%E6%9D%AD%E7%94%B5%E5%A4%9A%E6%A0%A1/"},"headline":"2023杭电多校 赛题总结","image":["https://cu-oh-2.github.io/images/icpc.png"],"datePublished":"2023-10-07T00:00:00.000Z","dateModified":"2024-06-10T07:57:01.323Z","author":{"@type":"Person","name":"Cu_OH_2"},"publisher":{"@type":"Organization","name":"502 Bad Gateway","logo":{"@type":"ImageObject","url":{"text":"502 Bad Gateway"}}},"description":"2023杭电多校赛题总结"}</script><link rel="canonical" href="https://cu-oh-2.github.io/post/2023%E6%9D%AD%E7%94%B5%E5%A4%9A%E6%A0%A1/"><link rel="icon" href="https://avatars.githubusercontent.com/u/104898033"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0-rc1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">502 Bad Gateway</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/icpc.png" alt="2023杭电多校 赛题总结"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-10-07T00:00:00.000Z" title="10/7/2023, 12:00:00 AM">2023-10-07</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></span></div></div><h1 class="title is-3 is-size-4-mobile">2023杭电多校 赛题总结</h1><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这篇笔记记录我在 2023 年“钉耙编程”中国大学生算法设计超级联赛（杭电多校）的 10 场比赛中遇到并认为值得记录的赛题题解以及我的思考和收获。</p>
+<div align="center">
+    <img src="../../images/2023杭电多校/list.jpg"></img>
+</div>
+
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><ul>
+<li><a href="#02-12">【02-12】Coin</a></li>
+<li><a href="#03-02">【03-02】King’s Ruins</a></li>
+<li><a href="#04-11">【04-11】Circuit</a></li>
+<li><a href="#04-12">【04-12】a-b Problem</a></li>
+<li><a href="#06-02">【06-02】Pair Sum and Perfect Square</a></li>
+<li><a href="#08-06">【08-06】Nested String</a></li>
+<li><a href="#08-09">【08-09】Diagonal Fancy</a></li>
+<li><a href="#08-10">【08-10】Rikka with Square Numbers</a></li>
+<li><a href="#09-02">【09-02】Shortest path</a></li>
+</ul>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><p><a id="02-12"></a></p>
+<h3 id="【02-12】Coin"><a href="#【02-12】Coin" class="headerlink" title="【02-12】Coin"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=7298">【02-12】Coin</a></h3><h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>有 $n(n\le3000)$ 个人在一起玩游戏。初始时每人拥有 $1$ 枚硬币，接着游戏进行 $m(m\le 3000)$ 回合。每回合会有两个人 A 和 B 被选中，他们可以有三种选择：</p>
+<ol>
+<li>A 给 B 一枚硬币</li>
+<li>B 给 A 一枚硬币</li>
+<li>什么也不做</li>
+</ol>
+<p>游戏过程中，限定第 $i$ 个人最多拥有 $a_i$ 枚硬币。求在所有可能的情况中，指定的 $k(k\le n)$ 个人在游戏结束时最多共拥有多少枚硬币。</p>
+<h4 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>通过按照时间阶段拆点，建立网络流模型：<ol>
+<li>源点向每个人连一条容量为 $1$ 的边</li>
+<li>每回合都在选中的二人之间连容量为 $1$ 的边，并将二人的结点扩展出新结点。旧结点到新结点的容量为 $a_i$ </li>
+<li>最后将指定的 $k$ 个人的终态结点连向汇点，容量为 $a_i$</li>
+</ol>
+</li>
+<li>用 Dinic 算法求源点到汇点的最大流即可。</li>
+</ul>
+<h4 id="笔记-1"><a href="#笔记-1" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li>比较典型的拆点网络流建模。要点是将玩家每回合的状态拆开，然后将游戏回合中的硬币流动抽象为状态之间的流。当网络流中的结点有最大流量限制时，一般都是通过拆点把该限制转换为对边流量的限制。</li>
+<li>关于最大流的时间复杂度：在流量极大时，Dinic 算法最坏情况下的时间复杂度为 $O(V^2E)$；而由于跑不满，实际情况中一般 3000 左右的点数和边数就可以使用最大流算法。然而，这题的最大流量较小，情况有所不同：由于每次增广最大流量都会提升，而增广一次的时间复杂度为 $O(E)$，总时间复杂度不会超过 $O(EF)$，其中 $F$ 为最大流量。</li>
+</ul>
+<hr>
+<p><a id="03-02"></a></p>
+<h3 id="【03-02】King’s-Ruins"><a href="#【03-02】King’s-Ruins" class="headerlink" title="【03-02】King’s Ruins"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=7301">【03-02】King’s Ruins</a></h3><h4 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h4><p>有 $n(n\le5\times10^4)$ 位骑士，分别给定每位骑士在 $5$ 个方面的能力值，以及选择每位骑士可以获得的价值。现在要按从左到右的顺序选择若干位骑士，要求每次选择的骑士在 $5$ 个方面的能力都不能小于上一次选择的骑士。求能够获得的最大价值。</p>
+<h4 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>五维偏序问题，若使用 CDQ 分治复杂度为 $O(n\log^4)$ ，甚至劣于暴力的 $O(n^2)$。</li>
+<li>考虑在 $O(n^2)$ 暴力 dp 的基础上应用分块技术。假设每块有 $k$ 个元素，对于每一块，块内元素暴力进行两两间转移需要 $O(k^2)$ ；块内元素与块后方 $O(n)$ 个元素间的转移可以等效为块的某个子集到块后方元素的转移，这需要用 bitset 在 $O(\frac{nk}{64})$ 预处理出每个块后元素需要转移的子集，并 $O(2^k)$ 预处理出每个子集的最大 dp 值。总共有 $O(\frac{n}{k})$ 个块，因此总时间复杂度为 $O(\frac{n}{k}(k^2+\frac{nk}{64}+2^k)) &#x3D; O(nk+\frac{n^2}{64}+\frac{n\cdot 2^k}{k})$ 当 $k$ 取 $\log n$ 时，总时间复杂度为 $O(\frac{n^2}{\log n})$，恰好符合要求。</li>
+</ul>
+<h4 id="笔记-2"><a href="#笔记-2" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li>本题是一个很经典的偏序 dp 问题，但做法却是一个从没见过的神奇分块+bitset优化，记录之。</li>
+<li>暴力预处理子集最大值需要 $O(2^k\cdot k)$ 时间；要想做到 $O(2^k)$ 可以对所有子集进行分治。</li>
+<li>似乎有一种类似的算法叫“The Method of Four Russians”&#x2F;“Four Russians”，思想是将区间每 $O(\log{n})$ 个元素分为一块，块内暴力计算，块间使用通常算法计算，从而优化通常算法的复杂度。该算法一般用来配合 ST 表优化 RMQ 问题。</li>
+</ul>
+<hr>
+<p><a id="04-11"></a></p>
+<h3 id="【04-11】Circuit"><a href="#【04-11】Circuit" class="headerlink" title="【04-11】Circuit"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=7322">【04-11】Circuit</a></h3><h4 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h4><p>给定一张 $n(n\le 500)$ 个点的简单带权有向图，求最小环的长度和个数。</p>
+<h4 id="做法-2"><a href="#做法-2" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>最小环计数问题。为了不重不漏，可以仅在每个环上指向最大编号点的边处考虑该环。</li>
+<li>用 Floyd 算法进行最短路计数，同时在枚举中间点 $k$ 时枚举指向 $k$ 的边 $(i,k)$，将以 $k$ 为最大编号点的最小环计入候选表，环的个数即为 $k$ 到 $i$ 的最短路条数。</li>
+<li>最后在候选表中选择长度最小的环即可，总时间复杂度为 $O(n^3)$。</li>
+</ul>
+<h4 id="笔记-3"><a href="#笔记-3" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li>最小环是很经典的图论问题。通常考虑枚举所有边，再根据反向最短路得到包含该边的最小环。有向图或无向图都可以考虑 Floyd 和 Dijkstra：<ul>
+<li>有向图 Floyd：枚举中间点 $k$ 的同时枚举边 $(i,k)$，看 $k$ 到 $i$ 的最短路。$O(n^3)$。</li>
+<li>无向图 Floyd：枚举中间点 $k$ 的同时枚举边 $(i,k)$ 和 $(k,j)$，看 $j$ 到 $i$ 的最短路。$O(n^3)$。</li>
+<li>有向图 Dijkstra：枚举所有边 $(i,j)$，求一次 $j$ 到 $i$ 的最短路。$O(m^2\log{m})$。</li>
+<li>无向图 Dijkstra：枚举所有边 $(i,j)$，屏蔽反向边求一次 $j$ 到 $i$ 的最短路。$O(m^2\log{m})$。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a id="04-12"></a></p>
+<h3 id="【04-12】a-b-Problem"><a href="#【04-12】a-b-Problem" class="headerlink" title="【04-12】a-b Problem"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=7323">【04-12】a-b Problem</a></h3><h4 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h4><p>有 $n(n\le10^5)$ 块石头，A 和 B 两人轮流进行操作，每次操作从剩余的石头中取一块，A 先手。给定 A 取第 $i$ 块石头的收益 $a_i$ 和 B 取第 $i$ 块石头的收益 $b_i$，求所有决策最优的情况下最终 A 的收益与 B 的收益的差值。</p>
+<h4 id="做法-3"><a href="#做法-3" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>问题可以等效转换为：初始时 $n$ 块石头都在 B 手中，轮到 A 时 A 可以从 B 手中抢走一块石头，而轮到 B 时 B 可以将一块石头藏起来不让 A 拿。若 A 抢走石头 $i$，二人的收益差距将会拉开 $a_i+b_i$。因此 A 和 B 的最优策略都是选择 $a_i+b_i$ 最大的石头。</li>
+<li>根据上述结论进行排序模拟即可，时间复杂度为 $O(n\log{n})$。</li>
+</ul>
+<h4 id="笔记-4"><a href="#笔记-4" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li>结论很好猜，但是赛时并没有细想怎么证。题解给出的问题转换很巧妙，这种先假设一种极端情况再往另一种极端情况靠近的思想也很常用。</li>
+</ul>
+<hr>
+<p><a id="06-02"></a></p>
+<h3 id="【06-02】Pair-Sum-and-Perfect-Square"><a href="#【06-02】Pair-Sum-and-Perfect-Square" class="headerlink" title="【06-02】Pair Sum and Perfect Square"></a><a href="">【06-02】Pair Sum and Perfect Square</a></h3><h4 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h4><p>给定一个长度为 $n(n\le10^5)$ 的排列和 $q(q\le10^5)$ 个询问，每个询问的内容如下：</p>
+<ul>
+<li>给定 $L$ 和 $R$，求有多少对 $i,j$ 满足 $L\le i&lt;j\le R$ 且 $p_i+p_j$ 是一个完全平方数。</li>
+</ul>
+<p>回答所有询问。</p>
+<h4 id="做法-4"><a href="#做法-4" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>$O(n)$ 以内的完全平方数只有 $O(\sqrt{n})$ 个，所以整个排列中满足条件的元素对只有 $O(n\sqrt{n})$ 对。</li>
+<li>预处理出所有满足条件的点对，并离线所有询问。考虑从右到左在每个后缀上用树状数组维护后缀的前缀的答案数，这样的时间复杂度为 $O((n\sqrt{n}+q)\log{n})$，有点难过。</li>
+<li>将 $O(\log{n})$修改+$O(\log{n})$ 查询的树状数组换成 $O(1)$ 修改+$O(\sqrt{n})$ 查询的分块，总时间复杂度变为 $O(n\sqrt{n}+q\sqrt{n})$，符合时间要求。</li>
+</ul>
+<h4 id="笔记-5"><a href="#笔记-5" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li><p>查询满足 $L\le l&lt;r\le R$ 的 $(l,r)$ 点对数，类似二维数点问题，非常经典。通常是将点对和询问按照左端点放在一起，从右往左考虑，不断加入左端点为 $i$ 的点对，使得条件 $L&#x3D;i\le l$ 自动满足；然后查询前缀 $R$ 中的点对个数，使得 $r\le R$ 也满足。在点对数与询问数同数量级 $O(q)$ 时，通常用树状数组维护前缀，时间复杂度 $O(q\log{n})$，比较优秀；然而这题的点对数为 $O(q\sqrt{q})$ 级别，所以需要引入修改较快、查询较慢的数据结构。分块可以 $O(1)$ 修改、$O(\sqrt{n})$ 查询，正是一个完美的选择。</p>
+</li>
+<li><p>其实这题也是一道莫队二次离线模板题，将莫队转移的过程离线下来再通过可差分性预处理即可。</p>
+</li>
+</ul>
+<hr>
+<p><a id="08-06"></a></p>
+<h3 id="【08-06】Nested-String"><a href="#【08-06】Nested-String" class="headerlink" title="【08-06】Nested String"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=7366">【08-06】Nested String</a></h3><h4 id="题意-5"><a href="#题意-5" class="headerlink" title="题意"></a>题意</h4><p>给定字符串 $T_1,T_2,S(|T_1|,|T_2|,|S|\le 10^7)$，定义「T-嵌套串」为在 $T_1$ 任意位置插入 $T_2$ 得到的字符串。求 $S$ 中包含多少个位置不同或本身不同的T-嵌套串。</p>
+<h4 id="做法-5"><a href="#做法-5" class="headerlink" title="做法"></a>做法</h4><ul>
+<li><p>数据范围为 $10^7$，只能考虑 $O(n)$ 算法。而字符串哈希的时空复杂度常数较大，难以通过。</p>
+</li>
+<li><p>T-嵌套串的长度固定为 $|T_1|+|T_2|$，因此可以考虑枚举其在 $S$ 中的位置。对于每个位置 $S[l,r]$，判断它是否为T-嵌套串需要知道的是：</p>
+<ol>
+<li>$S[l,r]$ 与 $T_1$ 的最长公共前缀</li>
+<li>$S[l,r]$ 与 $T_1$ 的最长公共后缀</li>
+<li>$T_2$ 与 $S[l,r]$ 匹配的位置</li>
+</ol>
+<p>其中，1 和 2 等价于 $S$ 的所有后缀&#x2F;前缀与 $T_1$ 的最长公共前缀&#x2F;后缀，可以通过扩展 KMP 算法预处理得到；而 3 可以通过 KMP 算法轻松计算。</p>
+</li>
+<li><p>在预处理出上述信息后，对于每个位置 $S[l,r]$ 就可以算出 $T_2$ 插入后符合要求的位置范围。对该范围利用前缀和进行区间累加，最后再遍历 $T_2$ 在 $S$ 中的匹配位置即可统计出答案。</p>
+</li>
+</ul>
+<h4 id="笔记-6"><a href="#笔记-6" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li>本题的要点在于将T-嵌套串分成三部分考虑，并将T-嵌套串前缀和后缀的匹配转换为 LCP 问题。处理模式串与文本串所有后缀的 LCP 是扩展 KMP 算法的典型应用。</li>
+</ul>
+<hr>
+<p><a id="08-09"></a></p>
+<h3 id="【08-09】Diagonal-Fancy"><a href="#【08-09】Diagonal-Fancy" class="headerlink" title="【08-09】Diagonal Fancy"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=7369">【08-09】Diagonal Fancy</a></h3><h4 id="题意-6"><a href="#题意-6" class="headerlink" title="题意"></a>题意</h4><p>给定一个 $n\times m(\sum n\times m\le 10^7)$ 的矩阵，求其中有多少个子正方形，满足该子正方形内每个从左上到右下的对角线内部的数字相同，且不同对角线之间数字互不相同。</p>
+<h4 id="做法-6"><a href="#做法-6" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>对于第一个条件，可以通过动态规划来维护：用 $dp(i,j)$ 表示以 $(i,j)$ 为右下角的满足第一个条件的最大正方形边长，有 $dp(i,j)&#x3D;\min{dp(i-1,j),dp(i,j-1),dp(i-1,j-1)}+1$。</li>
+<li>对于第二个条件，继续考虑上述转移：$dp(i-1,j)$ 保证了靠右上的 $2n-3$ 条对角线互不相同，$dp(i,j-1)$ 保证了靠左下的 $2n-3$ 条对角线互不相同，$dp(i-1,j-1)$ 保证了居中的 $2n-3$ 条对角线互不相同。因此只需要在转移时再检查一下靠右上的两条对角线和靠左下的两条对角线是否互不相同即可。若互不相同，则 $dp(i,j)&#x3D;\min{dp(i-1,j),dp(i,j-1),dp(i-1,j-1)}+1$，否则 $dp(i,j)&#x3D;\min{dp(i-1,j),dp(i,j-1),dp(i-1,j-1)}$。</li>
+<li>总时间复杂度 $O(nm)$。</li>
+</ul>
+<h4 id="笔记-7"><a href="#笔记-7" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li>找符合条件子正方形常用的一种经典动态规划转移：$dp(i,j)&#x3D;\min{dp(i-1,j),dp(i,j-1),dp(i-1,j-1)}+1$。</li>
+</ul>
+<hr>
+<p><a id="08-10"></a></p>
+<h3 id="【08-10】Rikka-with-Square-Numbers"><a href="#【08-10】Rikka-with-Square-Numbers" class="headerlink" title="【08-10】Rikka with Square Numbers"></a><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=7370">【08-10】Rikka with Square Numbers</a></h3><h4 id="题意-7"><a href="#题意-7" class="headerlink" title="题意"></a>题意</h4><p>给定两个整数 $a,b(1\le a,b\le 10^9,a\neq b)$。每次操作可以让 $a$ 加或减一个完全平方数，求最少几次操作才能使 $a$ 变成 $b$。</p>
+<h4 id="做法-7"><a href="#做法-7" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>令 $d&#x3D;|a-b|$，则相当于将 $b$ 表示为若干完全平方数的和或差。</li>
+<li>若 $d$ 为完全平方数，则答案为 $1$。</li>
+<li>否则分类讨论：</li>
+</ul>
+<ol>
+<li>若 $d$ 为奇数，则 $d&#x3D;d\times 1&#x3D;(\lceil\frac{d}{2}\rceil+\lfloor\frac{d}{2}\rfloor)(\lceil\frac{d}{2}\rceil-\lfloor\frac{d}{2}\rfloor)&#x3D;\lceil\frac{d}{2}\rceil^2-\lfloor\frac{d}{2}\rfloor^2$，答案为 $2$</li>
+<li>若 $d$ 为 $4$ 的倍数，则 $d&#x3D;\frac{d}{2}-(-\frac{d}{2})&#x3D;(\frac{d}{4}+1)^2-(\frac{d}{4}-1)^2$，答案为 $2$</li>
+<li>若 $d$ 为 $4k+2$，首先至少可以花一步转换为奇数，即答案至多为 $3$，所以只需要判断 $d$ 能否表示为两平方数的和或差。由于 $p^2-q^2&#x3D;(p+q)(p-q)$，$(p-q)$ 和 $(p+q)$ 的奇偶性一定相同，$p^2-q^2$ 不可能为 $4k+2$，即 $d$ 不可能表示为完全平方数的差。所以只需要枚举比 $d$ 小的所有完全平方数判断 $d$ 是否能表示为完全平方数的和即可。</li>
+</ol>
+<ul>
+<li>总时间复杂度 $O(\sqrt{|a-b|})$。</li>
+</ul>
+<h4 id="笔记-8"><a href="#笔记-8" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li>与完全平方数相关的两个经典结论：</li>
+</ul>
+<ol>
+<li>奇数和 $4$ 的倍数一定能表示成两个完全平方数之差</li>
+<li>两个完全平方数之差一定是奇数或 $4$ 的倍数，即 $4k+2$ 不可能表示成两个完全平方数之差</li>
+</ol>
+<hr>
+<p><a id="09-02"></a></p>
+<h3 id="【09-02】Shortest-path"><a href="#【09-02】Shortest-path" class="headerlink" title="【09-02】Shortest path"></a><a target="_blank" rel="noopener" href="https://acm.hdu.edu.cn/showproblem.php?pid=7372">【09-02】Shortest path</a></h3><h4 id="题意-8"><a href="#题意-8" class="headerlink" title="题意"></a>题意</h4><p>有一张包含 $n(n\le10^{18})$ 个结点的图，对于每个结点 $i$ 按照如下方式建立有向边：</p>
+<ol>
+<li>若 $2i\le n$，则结点 $i$ 向结点 $2i$ 连边</li>
+<li>若 $3i\le n$，则结点 $i$ 向结点 $3i$ 连边</li>
+<li>若 $i+1\le n$，则结点 $i$ 向结点 $i+1$ 连边</li>
+</ol>
+<p>求结点 1 到结点 $n$ 的最短距离。</p>
+<h4 id="做法-8"><a href="#做法-8" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>将问题逆向，相当于通过除以 $2$、除以 $3$、减 $1$ 三种操作将一个初始为 $n$ 的数变为 $1$。</li>
+<li>先减两次再除以 $2$ 或先减三次再除以 $3$ 都是非最优的，因此每次除以 $2$ 前最多减 $1$ 次，每次除以 $3$ 前最多减 $2$ 次。</li>
+<li>从 $n$ 出发记忆化搜索，每次除以 $2$&#x2F;除以 $3$ 操作一定在下方最近的 $2$ 的倍数&#x2F;$3$ 的倍数处进行。搜到的点都可以表示为 $\lfloor \frac{n}{2^a3^b}\rfloor$，总共有 $O(\log^2n)$ 个。</li>
+</ul>
+<h4 id="笔记-9"><a href="#笔记-9" class="headerlink" title="笔记"></a>笔记</h4><ul>
+<li>典中典套路。将减 $1$ 操作作为基本操作，填充在特殊操作（除以 $2$&#x2F;除以 $3$）之间，搜索时直接跳过，不需要记录每次减 $1$ 操作的结果，这样才能保证较低的时间复杂度。</li>
+<li>元素个数较少时可以用 <code>unordered_map</code> 优化复杂度。</li>
+</ul>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>2023杭电多校 赛题总结</p><p><a href="https://cu-oh-2.github.io/post/2023杭电多校/">https://cu-oh-2.github.io/post/2023杭电多校/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Cu_OH_2</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-10-07</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-06-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/2024.4%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">2024.4 刷题笔记</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/2023%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1/"><span class="level-item">2023牛客暑期多校训练营 赛题总结</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/104898033" alt="Cu_OH_2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cu_OH_2</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Cu-OH-2" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="洛谷" href="https://www.luogu.com.cn/user/545900"><i class="fas fa-list"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Codeforces" href="https://codeforces.com/profile/Cu_OH_2"><i class="fas fa-code"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="牛客竞赛" href="https://ac.nowcoder.com/acm/contest/profile/562512097"><i class="fas fa-flag"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/renbaoshuo/hexo-for-oiers" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo for OIers</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%88%B7%E9%A2%98/"><span class="level-start"><span class="level-item">刷题</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-04T00:00:00.000Z">2024-06-04</time></p><p class="title"><a href="/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-03T00:00:00.000Z">2024-06-03</time></p><p class="title"><a href="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-27T00:00:00.000Z">2024-05-27</time></p><p class="title"><a href="/post/2024.5%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">2024.5 刷题笔记</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-17T00:00:00.000Z">2024-05-17</time></p><p class="title"><a href="/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-04T00:00:00.000Z">2024-05-04</time></p><p class="title"><a href="/post/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/">移动语义 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/STL/"><span class="tag">STL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="tag">智能指针</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><span class="tag">概率论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><span class="tag">移动语义</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">502 Bad Gateway</a><p class="is-size-7"><span>&copy; 2024 Cu_OH_2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="icon" href="/fab%20fa-github">icon</a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="url" href="https://github.com/Cu-OH-2">url</a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

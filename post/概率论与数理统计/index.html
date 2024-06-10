@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>概率论与数理统计 复习笔记 - 502 Bad Gateway</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="502 Bad Gateway"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/104898033"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="502 Bad Gateway"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="《概率论与数理统计》复习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="概率论与数理统计 复习笔记"><meta property="og:url" content="https://cu-oh-2.github.io/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"><meta property="og:site_name" content="502 Bad Gateway"><meta property="og:description" content="《概率论与数理统计》复习笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cu-oh-2.github.io/images/landscape.jpg"><meta property="article:published_time" content="2024-06-03T00:00:00.000Z"><meta property="article:modified_time" content="2024-06-10T07:57:01.323Z"><meta property="article:author" content="Cu_OH_2"><meta property="article:tag" content="数学"><meta property="article:tag" content="概率论"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cu-oh-2.github.io/images/landscape.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cu-oh-2.github.io/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"},"headline":"概率论与数理统计 复习笔记","image":["https://cu-oh-2.github.io/images/landscape.jpg"],"datePublished":"2024-06-03T00:00:00.000Z","dateModified":"2024-06-10T07:57:01.323Z","author":{"@type":"Person","name":"Cu_OH_2"},"publisher":{"@type":"Organization","name":"502 Bad Gateway","logo":{"@type":"ImageObject","url":{"text":"502 Bad Gateway"}}},"description":"《概率论与数理统计》复习笔记"}</script><link rel="canonical" href="https://cu-oh-2.github.io/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"><link rel="icon" href="https://avatars.githubusercontent.com/u/104898033"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0-rc1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">502 Bad Gateway</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/landscape.jpg" alt="概率论与数理统计 复习笔记"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-06-03T00:00:00.000Z" title="6/3/2024, 12:00:00 AM">2024-06-03</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div></div><h1 class="title is-3 is-size-4-mobile">概率论与数理统计 复习笔记</h1><div class="content"><h2 id="1-随机事件与概率"><a href="#1-随机事件与概率" class="headerlink" title="1 随机事件与概率"></a>1 随机事件与概率</h2><h3 id="概率的加法公式"><a href="#概率的加法公式" class="headerlink" title="概率的加法公式"></a>概率的加法公式</h3><p>$$P(\cup_{i&#x3D;1}^{n}A_i)&#x3D;\sum_i^n P(A_i)-\sum_{1\le i&lt;j\le n}P(A_iA_j)+\sum_{1\le i&lt;j&lt;k\le n} P(A_iA_jA_k)-\cdots+(-1)^nP(A_i\cdots A_j)$$</p>
+<p>类似容斥原理</p>
+<h3 id="伯努利试验与二项概率"><a href="#伯努利试验与二项概率" class="headerlink" title="伯努利试验与二项概率"></a>伯努利试验与二项概率</h3><p>伯努利试验：只有成功或失败两种结果的随机试验</p>
+<p>二项概率：$n$ 重伯努利试验恰好成功 $k$ 次的概率</p>
+<h3 id="全概率公式和贝叶斯公式"><a href="#全概率公式和贝叶斯公式" class="headerlink" title="全概率公式和贝叶斯公式"></a>全概率公式和贝叶斯公式</h3><p>假设 $A_1,A_2,\cdots,A_n$ 构成样本空间的一个划分，$B$ 是某个事件</p>
+<ul>
+<li>全概率公式：</li>
+</ul>
+<p>$$P(B)&#x3D;\sum_{i&#x3D;1}^nP(A_i)P(B|A_i)$$</p>
+<ul>
+<li>贝叶斯公式：当 $P(B)&gt;0$ 时</li>
+</ul>
+<p>$$P(A_i|B)&#x3D;\frac{P(A_iB)}{P(B)}&#x3D;\frac{P(A_i)P(B|A_i)}{\sum_{l&#x3D;1}^{n}P(A_l)P(B|A_l)}$$</p>
+<h2 id="2-离散型随机变量及其分布"><a href="#2-离散型随机变量及其分布" class="headerlink" title="2 离散型随机变量及其分布"></a>2 离散型随机变量及其分布</h2><h3 id="二项分布-B-n-p"><a href="#二项分布-B-n-p" class="headerlink" title="二项分布 $B(n,p)$"></a>二项分布 $B(n,p)$</h3><p>$n$ 重伯努利试验成功的次数 $X$ 服从二项分布<br>$$P(X&#x3D;k)&#x3D;C_n^kp^k(1-p)^{n-k}$$</p>
+<p>$n&#x3D;1$ 的二项分布称为0-1分布</p>
+<h3 id="逆二项分布"><a href="#逆二项分布" class="headerlink" title="逆二项分布"></a>逆二项分布</h3><p>伯努利试验中，成功 $n$ 次时已进行的试验次数 $X$ 服从逆二项分布</p>
+<p>$$P(X&#x3D;k)&#x3D;C_{k-1}^{n-1}p^n(1-p)^{k-n},k&#x3D;n,n+1,\cdots$$</p>
+<p>即前 $k-1$ 次试验恰好成功 $n-1$ 次，且第 $k$ 次试验成功</p>
+<h3 id="超几何分布-H-N-M-n"><a href="#超几何分布-H-N-M-n" class="headerlink" title="超几何分布 $H(N,M,n)$"></a>超几何分布 $H(N,M,n)$</h3><p>$N$ 个物品中有 $M$ 个目标物品，无放回抽样 $n$ 次抽到的目标物品个数 $X$ 服从超几何分布</p>
+<p>$$P(X&#x3D;k)&#x3D;\frac{C_M^kC_{N-M}^{n-k} }{C_N^n}$$</p>
+<p>当 $N\gg n$ 时，超几何分布<strong>近似</strong>于二项分布，即可以视作有放回抽样</p>
+<h3 id="泊松分布-P-lambda"><a href="#泊松分布-P-lambda" class="headerlink" title="泊松分布 $P(\lambda)$"></a>泊松分布 $P(\lambda)$</h3><p>泊松定理：记 $\lambda&#x3D;np$</p>
+<p>$$\underset{n\rightarrow\infty}\lim C_n^k p^k(1-p)^{n-k}&#x3D;e^{-\lambda}\cdot \frac{\lambda^k}{k!}$$</p>
+<p>即当 $n$ 较大时，二项分布<strong>近似</strong>于泊松分布</p>
+<p>$$P(X&#x3D;k)&#x3D;e^{-\lambda}\cdot \frac{\lambda^k}{k!}$$</p>
+<p>而泊松分布的概率计算更容易</p>
+<p>需要注意由于 $n\rightarrow \infty$，为了避免 $\lambda\rightarrow\infty$，需要 $p\rightarrow 0$</p>
+<h3 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h3><p>伯努利试验中，成功一次时已进行的试验次数 $X$ 服从几何分布</p>
+<p>$$P(X&#x3D;k)&#x3D;p(1-p)^{k-1}$$</p>
+<p>几何分布是逆二项分布的一种特殊情况</p>
+<p>几何分布的<strong>无记忆性</strong>：</p>
+<p>$$P(X&gt;s+t|X&gt;s)&#x3D;P(X&gt;t)$$</p>
+<h3 id="分布的可加性"><a href="#分布的可加性" class="headerlink" title="分布的可加性"></a>分布的可加性</h3><p>二项分布可加性（可拓展）：<br>$$X\sim B(m,p),Y\sim B(n,p)\Rightarrow X+Y\sim B(m+n,p)$$</p>
+<p>泊松分布可加性（可拓展）：<br>$$X\sim P(\lambda_1),Y\sim P(\lambda_2)\Rightarrow X+Y\sim P(\lambda_1+\lambda_2)$$</p>
+<p>可加性的前提都是<strong>相互独立</strong></p>
+<h3 id="二维随机变量"><a href="#二维随机变量" class="headerlink" title="二维随机变量"></a>二维随机变量</h3><p>边缘概率函数不能唯一确定联合概率函数</p>
+<p>分布独立性的定义：联合密度函数等于边缘密度函数的乘积</p>
+<h2 id="3-连续性随机变量及其分布"><a href="#3-连续性随机变量及其分布" class="headerlink" title="3 连续性随机变量及其分布"></a>3 连续性随机变量及其分布</h2><h3 id="分布函数和概率密度函数"><a href="#分布函数和概率密度函数" class="headerlink" title="分布函数和概率密度函数"></a>分布函数和概率密度函数</h3><p>分布函数 $F(x)$：可以表示概率</p>
+<p>概率密度函数 $f(x)$：密度，不能表示概率</p>
+<p>$F(x)&#x3D;\int_{-\infty}^{\infty}f(x)dx$</p>
+<h3 id="均匀分布-R-a-b"><a href="#均匀分布-R-a-b" class="headerlink" title="均匀分布 $R(a,b)$"></a>均匀分布 $R(a,b)$</h3><p>仅在区间 $[a,b]$ 上等概率分布，密度 $\frac{1}{b-a}$</p>
+<h3 id="指数分布-E-lambda"><a href="#指数分布-E-lambda" class="headerlink" title="指数分布 $E(\lambda)$"></a>指数分布 $E(\lambda)$</h3><p>概率密度函数 $f(x)&#x3D;\begin{cases}\lambda e^{-\lambda x},x&gt;0\\ 0,x\le 0\end{cases}$</p>
+<p>分布函数 $F(x)&#x3D;\begin{cases}1-e^{-\lambda x},x\ge 0\\ 0,x&lt;0\end{cases}$</p>
+<p>指数分布也具有<strong>无记忆性</strong></p>
+<h3 id="正态分布（高斯分布）-N-mu-sigma-2"><a href="#正态分布（高斯分布）-N-mu-sigma-2" class="headerlink" title="正态分布（高斯分布）$N(\mu,\sigma^2)$"></a>正态分布（高斯分布）$N(\mu,\sigma^2)$</h3><p>概率密度函数 $f(x)&#x3D;\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$</p>
+<p>正态分布的线性函数的分布：<br>$$X\sim N(\mu,\sigma^2)\Rightarrow kX+c\sim N(k\mu+c,k^2\sigma)$$</p>
+<p>$$X\sim N(\mu,\sigma^2)\Rightarrow \frac{X-\mu}{\sigma}\sim N(0,1)$$</p>
+<p>二维正态分布 $N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$ 中 $\rho$ 代表两变量的相关性，两变量的边缘分布都是一维正态分布</p>
+<h3 id="联合密度和边缘密度"><a href="#联合密度和边缘密度" class="headerlink" title="联合密度和边缘密度"></a>联合密度和边缘密度</h3><p>联合密度（点密度） $\overset{integrate}\longrightarrow$ 边缘密度（线密度） $\overset{integrate}\longrightarrow$ 事件概率（面概率）</p>
+<h3 id="正态分布的可加性"><a href="#正态分布的可加性" class="headerlink" title="正态分布的可加性"></a>正态分布的可加性</h3><p>若 $X,Y$ 相互独立：<br>$$X\sim N(\mu_1,\sigma_1),Y\sim N(\mu_2,\sigma_2)\\Rightarrow X+Y\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2),X-Y\sim N(\mu_1-\mu_2,\sigma_1^2+\sigma_2^2)$$</p>
+<p>（甚至正态分布相乘也是正态分布）</p>
+<h3 id="二维随机变量函数的密度函数"><a href="#二维随机变量函数的密度函数" class="headerlink" title="二维随机变量函数的密度函数"></a>二维随机变量函数的密度函数</h3><p>由 $f(x,y)$ 求 $X&#x3D;g(x,y)$ 的密度函数：根据 $g(x,y)$ 表达式画出图，进行积分求 $F_Z(z)$，再求导得 $f_Z(z)$</p>
+<h3 id="卷积公式"><a href="#卷积公式" class="headerlink" title="卷积公式"></a>卷积公式</h3><p>若 $X,Y$ 相互独立，$Z&#x3D;X+Y$：<br>$$f_Z(z)&#x3D;\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)dx$$ </p>
+<h2 id="4-随机变量的数字特征"><a href="#4-随机变量的数字特征" class="headerlink" title="4 随机变量的数字特征"></a>4 随机变量的数字特征</h2><h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><p>离散随机变量期望（仅当收敛时有定义）：<br>$$E(X)&#x3D;\sum_{i&#x3D;1}^{\infty}a_ip_i$$</p>
+<p>连续随机变量期望：<br>$$E(X)&#x3D;\int_{-\infty}^{\infty}xf(x)dx$$</p>
+<p>期望的性质：</p>
+<ul>
+<li>$E(kX+c)&#x3D;kE(X)+c$</li>
+<li>$X,Y$ 相互独立时，$E(XY)&#x3D;E(X)E(Y)$</li>
+</ul>
+<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>方差在期望的基础上定义：<br>$$D(X)&#x3D;E{[X-E(X)]^2}&#x3D;E(X^2)-[E(X)]^2$$</p>
+<h3 id="常见分布的期望和方差"><a href="#常见分布的期望和方差" class="headerlink" title="常见分布的期望和方差"></a>常见分布的期望和方差</h3><table>
+<thead>
+<tr>
+<th>分布</th>
+<th>期望</th>
+<th>方差</th>
+<th>$X^2$ 期望</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$B(n,p)$</td>
+<td>$np$</td>
+<td>$np(1-p)$</td>
+<td>$np(1-p)+(np)^2$</td>
+</tr>
+<tr>
+<td>$P(\lambda)$</td>
+<td>$\lambda$</td>
+<td>$\lambda$</td>
+<td>$\lambda^2+\lambda$</td>
+</tr>
+<tr>
+<td>$R(a,b)$</td>
+<td>$\frac{a+b}{2}$</td>
+<td>$\frac{(b-a)^2}{12}$</td>
+<td></td>
+</tr>
+<tr>
+<td>$E(\lambda)$</td>
+<td>$\frac{1}{\lambda}$</td>
+<td>$\frac{1}{\lambda^2}$</td>
+<td>$\frac{2}{\lambda^2}$</td>
+</tr>
+<tr>
+<td>$H(N,M,n)$</td>
+<td>$\frac{nM}{N}$</td>
+<td>会算</td>
+<td></td>
+</tr>
+<tr>
+<td>$N(\mu,\sigma^2)$</td>
+<td>$\mu$</td>
+<td>$\sigma^2$</td>
+<td></td>
+</tr>
+<tr>
+<td>几何分布</td>
+<td>$\frac{1}{p}$</td>
+<td>$\frac{1-p}{p^2}$</td>
+<td>$\frac{2-p}{p^2}$</td>
+</tr>
+</tbody></table>
+<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><p>协方差反映两个随机变量总体误差的情况：<br>$$\text{cov}(X,Y)&#x3D;E{[X-E(X)][Y-E(Y)]}&#x3D;E(XY)-E(X)E(Y)$$</p>
+<p>协方差的性质：</p>
+<ul>
+<li>$\text{cov}(X,c)&#x3D;0$</li>
+<li>$\text{cov}(X,Y)&#x3D;\text{cov}(Y,X)$</li>
+<li>$\text{cov}(\sum_i X_i,\sum_j Y_j)&#x3D;\sum_i\sum_j\text{cov}(X_i,Y_j)$</li>
+</ul>
+<p>方差是协方差的特例：<br>$$D(X)&#x3D;\text{cov}(X,X)$$</p>
+<p>相关系数反映两个随机变量的线性相关性：<br>$$\rho(X,Y)&#x3D;\frac{\text{cov}(X,Y)}{\sqrt{D(X)D(Y)} }$$</p>
+<p>相互独立一定不相关，不相关不一定相互独立。</p>
+<h3 id="切比雪夫不等式"><a href="#切比雪夫不等式" class="headerlink" title="切比雪夫不等式"></a>切比雪夫不等式</h3><p>$$P(|X-\mu|\ge\epsilon)\le \frac{\sigma^2}{\epsilon^2}$$</p>
+<p>用于估算随机变量偏移均值的概率上界</p>
+<h3 id="柯西-许瓦兹不等式"><a href="#柯西-许瓦兹不等式" class="headerlink" title="柯西-许瓦兹不等式"></a>柯西-许瓦兹不等式</h3><p>$$[E(XY)]^2\le E(X^2)E(Y^2)$$</p>
+<p>用于比较<strong>矩</strong>的大小</p>
+<h2 id="5-随机变量序列的极限"><a href="#5-随机变量序列的极限" class="headerlink" title="5 随机变量序列的极限"></a>5 随机变量序列的极限</h2><h3 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h3><p>切比雪夫大数定律：对于两两不相关的随机变量序列，如果 <strong>$D(X_i)$ 有界</strong>，那么 $\frac{1}{n}\sum_{i&#x3D;1}^{n}(X_i-E(X_i))$ 依概率收敛于 $0$</p>
+<p>辛钦大数定律：对于<strong>独立同分布</strong>的随机变量序列，$\frac{1}{n}i\sum_{i&#x3D;1}^{n}X_i$ 依概率收敛于 $E(X)$</p>
+<p>伯努利大数定律：辛钦大数定律对于0-1分布的特例</p>
+<h3 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h3><p>列维-林德伯格中心极限定理：对于<strong>独立同分布</strong>的随机变量序列：<br>$$\underset{n\rightarrow\infty}\lim P\left(\sqrt{n}\frac{\overline X-\mu}{\sigma}\le x\right)&#x3D;\Phi(x)$$<br>其中 $\Phi(x)$ 是 $N(0,1)$ 的分布函数</p>
+<p>即可以近似认为：<br>$$\sum_{i&#x3D;1}^n X_i\sim N(n\mu,n\sigma^2),\overline X\sim N(\mu,\frac{\sigma^2}{n})$$</p>
+<p>德莫弗-拉普拉斯中心极限定理：列维-林德伯格中心极限定理对于0-1分布的特例</p>
+<p>根据中心极限定理，二项分布在 $n$ 较大时也可以用正态分布近似，优点是不需要 $p$ 趋于零</p>
+<h2 id="7-数理统计的基本概念"><a href="#7-数理统计的基本概念" class="headerlink" title="7 数理统计的基本概念"></a>7 数理统计的基本概念</h2><h3 id="统计量"><a href="#统计量" class="headerlink" title="统计量"></a>统计量</h3><p>一个随机变量是样本的函数，则称其为统计量，特点是不包含总体分布中的任何未知参数</p>
+<p>样本均值的方差：$D(\overline X)&#x3D;\frac{D(X)}{n}$</p>
+<p>样本方差：$S^2&#x3D;\frac{1}{n-1}\sum_{i&#x3D;1}^n(X_i-\overline X)^2$</p>
+<p><strong>样本方差不等于样本的二阶中心矩</strong></p>
+<ul>
+<li>解释一：因为样本均值是样本对总体均值的估计，使用样本均值引入了一个自由度的消耗（即一个线性约束 $\overline X&#x3D;\frac{1}{n}\sum_{i&#x3D;1}^{n}X_i$）</li>
+<li>解释二：样本均值与总体均值存在的偏差被忽视了，因此样本方差是对总体方差的低估</li>
+</ul>
+<h3 id="卡方分布-chi-2-n"><a href="#卡方分布-chi-2-n" class="headerlink" title="卡方分布 $\chi^2(n)$"></a>卡方分布 $\chi^2(n)$</h3><p>$n$ 个相互独立且服从标准正态分布变量的平方和服从卡方分布，其中 $n$ 称为自由度</p>
+<p>卡方分布的均值和方差：$Y\sim \chi^2(n)\Rightarrow E(Y)&#x3D;n,D(Y)&#x3D;2n$</p>
+<p>卡方分布具有可加性（根据定义显然）</p>
+<h3 id="学生分布-t-n"><a href="#学生分布-t-n" class="headerlink" title="学生分布 $t(n)$"></a>学生分布 $t(n)$</h3><p>若 $X,Y$ 相互独立且 $X\sim N(0,1),Y\sim\chi^2(n)$，则<br>$$\frac{X}{\sqrt{\frac{Y}{n} } }\sim t(n)$$</p>
+<p>其中 $n$ 称为自由度</p>
+<p>性质：当 $x\rightarrow\infty$ 时，密度函数趋于标准正态分布的密度函数</p>
+<p>解释：$\sqrt{\frac{Y}{n}}$ 其实是 $n$ 个变量标准差的观测值，趋于 1</p>
+<h3 id="F-分布-F-m-n"><a href="#F-分布-F-m-n" class="headerlink" title="F 分布 $F(m,n)$"></a>F 分布 $F(m,n)$</h3><p>若 $X,Y$ 相互独立且 $X\sim\chi^2(m),Y\sim\chi^2(n)$，则<br>$$\frac{\frac{X}{m} }{\frac{Y}{n} }\sim F(m,n)$$</p>
+<p>其中 $(m,n)$ 称为自由度</p>
+<p>性质：若 $F\sim F(m,n)$，则 $\frac{1}{F}\sim F(n,m)$</p>
+<p>解释：F 其实是变量方差的观测值的比值</p>
+<h3 id="抽样分布"><a href="#抽样分布" class="headerlink" title="抽样分布"></a>抽样分布</h3><p>统计量的分布都叫抽样分布</p>
+<p>对于正态总体 $N(\mu,\sigma^2)$ 的样本：</p>
+<ul>
+<li>$\overline X\sim N(\mu,\frac{\sigma^2}{n})$</li>
+<li>$\frac{n-1}{\sigma^2}S^2\sim\chi^2(n-1)$</li>
+<li>$\overline X$ 与 $S^2$ 相互独立（仅限正态分布）</li>
+</ul>
+<h2 id="8-参数估计"><a href="#8-参数估计" class="headerlink" title="8 参数估计"></a>8 参数估计</h2><p>用于估计未知参数的样本的函数称为估计量</p>
+<p>估计量的分布都是指随样本的分布</p>
+<h3 id="矩估计"><a href="#矩估计" class="headerlink" title="矩估计"></a>矩估计</h3><p>矩估计的思想是用样本原点矩来替换总体原点矩，从而估计与总体原点矩有关的未知参数</p>
+<p>$$\hat\sigma^2&#x3D;S_n^2$$</p>
+<p>$$\hat\mu&#x3D;\overline X$$</p>
+<h3 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h3><p>似然函数：$L(\theta)&#x3D;\prod_{i&#x3D;1}^nf(x_i;\theta)$，其中 $x_i$ 都视为常数</p>
+<p>极大似然估计量：$\hat\theta&#x3D;\text{argmax }L(\theta)$</p>
+<p>似然函数通常是多个概率密度函数的乘积，因此通常通过解方程 $\frac{d}{d\theta}\ln L(\theta)&#x3D;0$ 来计算极大似然估计</p>
+<h3 id="无偏估计"><a href="#无偏估计" class="headerlink" title="无偏估计"></a>无偏估计</h3><p>无偏估计 $\hat\theta$ 满足 $E(\hat\theta)&#x3D;\theta$</p>
+<p>无偏估计中估计值方差较小的称<strong>有效</strong></p>
+<p><strong>相合估计量</strong>在样本增多时估计值的方差趋近于零</p>
+<h3 id="置信区间"><a href="#置信区间" class="headerlink" title="置信区间"></a>置信区间</h3><p>找一个包含目标参数且随样本服从某一确定分布的变量，从而根据分位数转化得到目标参数的范围</p>
+<p>置信区间以估计值为中心，$1-\alpha$ 是在样本观测值下估计量在置信区间内的概率</p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>概率论与数理统计 复习笔记</p><p><a href="https://cu-oh-2.github.io/post/概率论与数理统计/">https://cu-oh-2.github.io/post/概率论与数理统计/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Cu_OH_2</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-06-03</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-06-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a><a class="link-muted mr-2" rel="tag" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">线性代数 复习笔记</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/2024.5%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"><span class="level-item">2024.5 刷题笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/104898033" alt="Cu_OH_2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cu_OH_2</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Cu-OH-2" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="洛谷" href="https://www.luogu.com.cn/user/545900"><i class="fas fa-list"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Codeforces" href="https://codeforces.com/profile/Cu_OH_2"><i class="fas fa-code"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="牛客竞赛" href="https://ac.nowcoder.com/acm/contest/profile/562512097"><i class="fas fa-flag"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/renbaoshuo/hexo-for-oiers" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo for OIers</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%88%B7%E9%A2%98/"><span class="level-start"><span class="level-item">刷题</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-04T00:00:00.000Z">2024-06-04</time></p><p class="title"><a href="/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-03T00:00:00.000Z">2024-06-03</time></p><p class="title"><a href="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-27T00:00:00.000Z">2024-05-27</time></p><p class="title"><a href="/post/2024.5%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">2024.5 刷题笔记</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-17T00:00:00.000Z">2024-05-17</time></p><p class="title"><a href="/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-04T00:00:00.000Z">2024-05-04</time></p><p class="title"><a href="/post/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/">移动语义 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/STL/"><span class="tag">STL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="tag">智能指针</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><span class="tag">概率论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><span class="tag">移动语义</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">502 Bad Gateway</a><p class="is-size-7"><span>&copy; 2024 Cu_OH_2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="icon" href="/fab%20fa-github">icon</a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="url" href="https://github.com/Cu-OH-2">url</a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

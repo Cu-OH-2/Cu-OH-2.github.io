@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>线性代数 复习笔记 - 502 Bad Gateway</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="502 Bad Gateway"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/104898033"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="502 Bad Gateway"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="《线性代数》复习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="线性代数 复习笔记"><meta property="og:url" content="https://cu-oh-2.github.io/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><meta property="og:site_name" content="502 Bad Gateway"><meta property="og:description" content="《线性代数》复习笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cu-oh-2.github.io/images/landscape.jpg"><meta property="article:published_time" content="2024-06-04T00:00:00.000Z"><meta property="article:modified_time" content="2024-06-10T07:57:01.323Z"><meta property="article:author" content="Cu_OH_2"><meta property="article:tag" content="数学"><meta property="article:tag" content="线性代数"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cu-oh-2.github.io/images/landscape.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cu-oh-2.github.io/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"},"headline":"线性代数 复习笔记","image":["https://cu-oh-2.github.io/images/landscape.jpg"],"datePublished":"2024-06-04T00:00:00.000Z","dateModified":"2024-06-10T07:57:01.323Z","author":{"@type":"Person","name":"Cu_OH_2"},"publisher":{"@type":"Organization","name":"502 Bad Gateway","logo":{"@type":"ImageObject","url":{"text":"502 Bad Gateway"}}},"description":"《线性代数》复习笔记"}</script><link rel="canonical" href="https://cu-oh-2.github.io/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><link rel="icon" href="https://avatars.githubusercontent.com/u/104898033"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0-rc1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">502 Bad Gateway</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/landscape.jpg" alt="线性代数 复习笔记"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-06-04T00:00:00.000Z" title="6/4/2024, 12:00:00 AM">2024-06-04</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div></div><h1 class="title is-3 is-size-4-mobile">线性代数 复习笔记</h1><div class="content"><h2 id="1-行列式"><a href="#1-行列式" class="headerlink" title="1 行列式"></a>1 行列式</h2><h3 id="行列式的计算"><a href="#行列式的计算" class="headerlink" title="行列式的计算"></a>行列式的计算</h3><p>$n$ 阶行列式公式：<br>$$D&#x3D;\sum_p (-1)^t a_{1p_1}a_{2p_2}\cdots a_{np_n}$$<br>其中 $p$ 是 $n$ 阶全排列，$t$ 是其对应的逆序数</p>
+<p>三阶行列式：主对角平行线积的和减去副对角平行线积的和</p>
+<p>上&#x2F;下三角行列式和对角行列式：主对角线元素的积</p>
+<h3 id="行列式的性质"><a href="#行列式的性质" class="headerlink" title="行列式的性质"></a>行列式的性质</h3><ol>
+<li>行列式中行与列等价（即对行成立的性质对列也成立）</li>
+<li>行列式沿主&#x2F;副对角线翻转后值不变</li>
+<li>交换两行，行列式变号（有两行相同的值为0）</li>
+<li>某一行元素的公因数可以提出来</li>
+<li>某一行元素为两数之和，则行列式关于该行可分解为两个行列式之和</li>
+<li>某一行加上另一行后值不变</li>
+<li>$\left|\begin{matrix}A&amp;0\\ C&amp;D\end{matrix}\right|&#x3D;|A||D|$，$\left|\begin{matrix}A&amp;B\\ C&amp;D\end{matrix}\right|\neq|A||D|-|B||C|$</li>
+</ol>
+<h3 id="行列式按行展开"><a href="#行列式按行展开" class="headerlink" title="行列式按行展开"></a>行列式按行展开</h3><p>余子式和代数余子式</p>
+<ul>
+<li>余子式：$n$ 阶行列式划去第 $i$ 行第 $j$ 列，剩下的 $n-1$ 阶行列式 $M_{ij}$</li>
+<li>代数余子式：$A_{ij}&#x3D;(-1)^{i+j}M_{ij}$</li>
+</ul>
+<p>按行展开：$D&#x3D;\sum_j a_{rj}A_{rj}$</p>
+<h2 id="2-矩阵及其运算"><a href="#2-矩阵及其运算" class="headerlink" title="2 矩阵及其运算"></a>2 矩阵及其运算</h2><h3 id="矩阵运算性质"><a href="#矩阵运算性质" class="headerlink" title="矩阵运算性质"></a>矩阵运算性质</h3><p>矩阵乘法不满足交换律，但满足结合律和<strong>分配律</strong></p>
+<p>穿脱原理：$(AB)^T&#x3D;B^TA^T,(AB)^{-1}&#x3D;A^{-1}B^{-1}$</p>
+<p>若 $A$ 是任意矩阵，则 $AA^T$ 和 $A^TA$ 都是对称阵</p>
+<p>$A&#x3D;0 \Leftrightarrow A^TA&#x3D;0$</p>
+<h3 id="方阵的行列式"><a href="#方阵的行列式" class="headerlink" title="方阵的行列式"></a>方阵的行列式</h3><p>$|AB|&#x3D;|A||B|$</p>
+<p>伴随矩阵 $A^*$ 是行列式 $|A|$ 各元素的<strong>代数</strong>余子式构成矩阵的<strong>转置</strong>矩阵，满足:</p>
+<ul>
+<li>$AA^*&#x3D;A^*A&#x3D;|A|E$</li>
+<li>$|A^*|&#x3D;|A|^{n-1}$，$n$ 为阶数</li>
+</ul>
+<h3 id="方阵的逆"><a href="#方阵的逆" class="headerlink" title="方阵的逆"></a>方阵的逆</h3><ol>
+<li>$A^{-1}&#x3D;\frac{A^*}{|A|}$</li>
+<li>矩阵 $A$ 可逆 $\Leftrightarrow |A|\neq 0$（称为非奇异矩阵）</li>
+<li>$|A^{-1}|&#x3D;|A|^{-1}$</li>
+<li>$(A^{-1})^T&#x3D;(A^T)^{-1}$</li>
+<li>若 $A$ 可逆，有定义 $A^0&#x3D;E,A^{-k}&#x3D;(A^{-1})^{k}$</li>
+<li>若 $A&#x3D;P\Lambda P^{-1}$，则 $\varphi(A)&#x3D;P\varphi(\Lambda)P^{-1}$，其中 $\varphi$ 是多项式</li>
+</ol>
+<h3 id="克拉默法则"><a href="#克拉默法则" class="headerlink" title="克拉默法则"></a>克拉默法则</h3><p>用于求解线性非齐次方程组的结论，略</p>
+<h3 id="矩阵分块"><a href="#矩阵分块" class="headerlink" title="矩阵分块"></a>矩阵分块</h3><p>分块对角矩阵</p>
+<ul>
+<li>行列式等于对角元素的行列式的积</li>
+<li>逆等于对角元素分别取逆</li>
+</ul>
+<p>分块矩阵的转置等于整体转置+各个转置</p>
+<h2 id="3-矩阵的初等变换与线性方程组"><a href="#3-矩阵的初等变换与线性方程组" class="headerlink" title="3 矩阵的初等变换与线性方程组"></a>3 矩阵的初等变换与线性方程组</h2><h3 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h3><p>初等行变换内容：</p>
+<ol>
+<li>对换两行</li>
+<li>使某一行乘上非零系数</li>
+<li>使某一行加上另一行乘系数</li>
+</ol>
+<p>初等变换前后的矩阵<strong>等价</strong>（$A\sim B$）</p>
+<p>初等行变换相当于左乘可逆矩阵，列变换相当于右乘可逆矩阵</p>
+<p>初等矩阵：$E$ 进行一次变换操作得到的矩阵</p>
+<p>可逆矩阵可以看作对 $E$ 进行一系列初等变换，因此求逆可以从 $E$ 开始用相反顺序执行相反变换</p>
+<h3 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h3><p>矩阵的 $k$ 阶子式：任取 $k$ 行 $k$ 列得到的交点构成的 $k$ 阶行列式</p>
+<p>矩阵的秩：最高阶非零子式的阶数</p>
+<ul>
+<li>$A\sim B\Rightarrow R(A)&#x3D;R(B)$</li>
+<li>$R(A^T)&#x3D;R(A)&#x3D;R(A^TA)$</li>
+<li>$\max{R(A),R(B)}\le R(A,B)\le R(A)+R(B)$</li>
+<li>$R(AB)\le \min{R(A),R(B)}$（相乘秩不增）</li>
+</ul>
+<p>伴随矩阵的秩</p>
+<ul>
+<li>$R(A)&#x3D;n\Leftrightarrow R(A^*)&#x3D;n$</li>
+<li>$R(A)&#x3D;n-1\Leftrightarrow R(A^*)&#x3D;1$</li>
+<li>$R(A)&lt;n-1\Leftrightarrow R(A^*)&#x3D;0$</li>
+</ul>
+<h3 id="线性方程组的解"><a href="#线性方程组的解" class="headerlink" title="线性方程组的解"></a>线性方程组的解</h3><p>$n$ 元线性方程组 $Ax&#x3D;b$：</p>
+<ul>
+<li>$R(A)&lt;R(A,b) \Leftrightarrow$ 无解</li>
+<li>$R(A)&#x3D;R(A,b)&#x3D;n \Leftrightarrow$ 唯一解</li>
+<li>$R(A)&#x3D;R(A,b)&lt;n \Leftrightarrow$ 无限多解</li>
+</ul>
+<p>方程组 $Ax&#x3D;0$ 有非零解 $\Leftrightarrow$ 有无限多解</p>
+<h2 id="4-向量组的线性相关性"><a href="#4-向量组的线性相关性" class="headerlink" title="4 向量组的线性相关性"></a>4 向量组的线性相关性</h2><h3 id="线性组合与线性表示"><a href="#线性组合与线性表示" class="headerlink" title="线性组合与线性表示"></a>线性组合与线性表示</h3><p>向量组能互相线性表示称为等价</p>
+<blockquote>
+<p>向量组等价代表向量空间相同，而矩阵等价只需要秩相等</p>
+</blockquote>
+<h3 id="线性相关"><a href="#线性相关" class="headerlink" title="线性相关"></a>线性相关</h3><p>当向量个数大于维数时一定线性相关</p>
+<p>零向量可以被任何向量组线性表示，因此不影响秩</p>
+<h3 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h3><p>线性齐次方程组解集的最大无关组称为基础解系，其张成的空间即解集称为解空间，空间的维度等于 $n-R(A)$</p>
+<p>线性非齐次方程组的解集不是向量空间</p>
+<p>基和坐标的变换：若基的变换公式为 $(a’_1,a’_2,..,a’_n)&#x3D;(a_1,a_2,…,a_n)P$，则坐标变换公式为 $\begin{pmatrix}x’_1\\ x’_2\\ \vdots\\ x’_3\end{pmatrix}&#x3D;P^{-1}\begin{pmatrix}x_1\\ x_2\\ \vdots\\ x_3\end{pmatrix}$，其中 $P&#x3D;A^{-1}B$ 称为过渡矩阵</p>
+<blockquote>
+<p>基在左，坐标在右；且坐标是列向量</p>
+</blockquote>
+<h2 id="5-相似矩阵和二次型"><a href="#5-相似矩阵和二次型" class="headerlink" title="5 相似矩阵和二次型"></a>5 相似矩阵和二次型</h2><h3 id="向量的正交性"><a href="#向量的正交性" class="headerlink" title="向量的正交性"></a>向量的正交性</h3><p>向量的内积：$[x,y]&#x3D;x^Ty$</p>
+<p>向量的长度：$\lVert x\rVert _2$</p>
+<p>向量的夹角：$\cos\theta&#x3D;\frac{[x,y]}{\lVert x\rVert\lVert y\rVert}$</p>
+<p>正交指向量内积为零</p>
+<p>一组两两正交的非零向量线性无关</p>
+<p>标准正交基：单位正交向量组，有无数个</p>
+<p>向量 $a$ 在标准正交基 $e$ 中的坐标 $\lambda&#x3D;ae$（此处是基在右）</p>
+<p>施密特正交化：将基向量减去自己在现有正交基上的投影并加入正交基</p>
+<p>正交矩阵：$A^{-1}&#x3D;A^T \Leftrightarrow$ 列向量组是<strong>单位</strong>正交向量组</p>
+<ul>
+<li>$A$ 是正交阵 $\Rightarrow |A|&#x3D;±1,$</li>
+<li>$A,B$ 是正交阵 $\Rightarrow AB$ 也是正交阵</li>
+<li>正交矩阵对应的变换不改变向量长度</li>
+</ul>
+<h3 id="方阵的特征值和特征向量"><a href="#方阵的特征值和特征向量" class="headerlink" title="方阵的特征值和特征向量"></a>方阵的特征值和特征向量</h3><p>若数 $\lambda$ 和非零列向量 $x$ 满足 $Ax&#x3D;\lambda x$，则 $\lambda$ 称为 $A$ 的特征向量，$x$ 称为对应的特征值</p>
+<p>由上述定义推得，特征方程 $|A-\lambda E|&#x3D;0$ 的解就是特征值</p>
+<p>特征值的性质</p>
+<ul>
+<li>特征值的和等于矩阵的迹：$\sum\lambda&#x3D;\sum a_{ii}$</li>
+<li>特征值的积等于矩阵的行列式 $\prod\lambda&#x3D;|A|$</li>
+<li>非零特征值个数等于矩阵的秩 $R(A)$</li>
+<li>若 $\lambda$ 是 $A$ 的特征值，则 $\varphi(\lambda)$ 是 $\varphi(A)$ 的特征值</li>
+<li>若 $A$ 的特征值各不相等，则特征向量线性无关（注意不可反推）</li>
+</ul>
+<h3 id="相似"><a href="#相似" class="headerlink" title="相似"></a>相似</h3><p>方阵 $B&#x3D;P^{-1}AP$ 称为方阵 $A$ 的<strong>相似</strong>矩阵</p>
+<p>相似矩阵的特征多项式相同，因此特征值都相同；但特征多项式相同的矩阵不一定相似</p>
+<p>求矩阵的特征值或幂需要将矩阵<strong>对角化</strong>，对角化使用的矩阵 $P$ 由特征列向量构成（$P$ 不唯一，且对角化结果也不唯一）</p>
+<p>由上，$A$ 可以对角化 $\Leftrightarrow A$ 有 $n$ 个线性无关的特征向量</p>
+<h3 id="合同"><a href="#合同" class="headerlink" title="合同"></a>合同</h3><p>方阵 $B&#x3D;C^{-1}AC$ 称为方阵 $A$ 的<strong>合同</strong>矩阵，其中 $C$ 可逆</p>
+<p>合同变换保持<strong>秩</strong>、<strong>对称性</strong>、<strong>正负惯性指数</strong>，但不保持特征值</p>
+<p>正交变换既是相似变换又是合同变换</p>
+<h3 id="对称矩阵的对角化"><a href="#对称矩阵的对角化" class="headerlink" title="对称矩阵的对角化"></a>对称矩阵的对角化</h3><p>对称矩阵的特征值都是实数</p>
+<p>对称矩阵不同特征值对应的特征向量正交</p>
+<p>对称矩阵一定能被正交对角化（可推广至二次型）</p>
+<blockquote>
+<p>重复特征值对应的特征空间可以找到正交特征向量，但也可以取非正交的，因此也可以非正交对角化</p>
+</blockquote>
+<h3 id="二次型和标准型"><a href="#二次型和标准型" class="headerlink" title="二次型和标准型"></a>二次型和标准型</h3><p>二次型：含 $n$ 个变量的二次齐次函数</p>
+<p>标准型：只含平方项的二次型</p>
+<p>二次型可以用矩阵表示为 $x^TAx$，其中 $A$ 为系数构成的对称阵，因此：</p>
+<ul>
+<li>二次型与对称阵一一对应</li>
+<li><strong>对称阵对角化</strong>的规律都可以应用于<strong>二次型标准化</strong></li>
+</ul>
+<h3 id="正定二次型"><a href="#正定二次型" class="headerlink" title="正定二次型"></a>正定二次型</h3><p>正&#x2F;负惯性指数：正&#x2F;负特征值的个数</p>
+<p>惯性定理：合同变换不改变惯性指数</p>
+<p><strong>对称矩阵</strong>的正定、半正定、负定、半负定、不定</p>
+<p>正定 $\Leftrightarrow$ 特征值全为正 $\Leftrightarrow$ 各阶主子式全为正</p>
+<p>负定 $\Leftrightarrow$ 奇数阶主子式全为负，偶数阶主子式全为正</p>
+<h2 id="6-线性空间与线性变换"><a href="#6-线性空间与线性变换" class="headerlink" title="6 线性空间与线性变换"></a>6 线性空间与线性变换</h2><h3 id="线性空间"><a href="#线性空间" class="headerlink" title="线性空间"></a>线性空间</h3><p>线性空间的定义</p>
+<ul>
+<li>对加法和数乘封闭</li>
+<li>加法交换律、加法结合律</li>
+<li>加法零元、负元</li>
+<li>乘法结合律、分配律</li>
+<li>乘法单位元</li>
+</ul>
+<p>子空间：非空子集+对加法和数乘封闭</p>
+<p>维数相等的线性空间都<strong>同构</strong>，即所有向量和向量的线性组合都一一对应</p>
+<h3 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h3><p>满足 $T(a_1+a_2)&#x3D;T(a_1)+T(a_2),T(\lambda a)&#x3D;\lambda T(a)$ 的映射 $T:V_n\rightarrow U_m$ 称为线性变换</p>
+<p>向量组 $A$ 线性相关 $\Rightarrow$ $T(A)$ 线性相关，但线性无关（逆命题）不一定成立</p>
+<p>线性变换的核空间：$N_T&#x3D;{\alpha|\alpha\in V,T\alpha &#x3D; 0}$（会被映射到零的向量集合）</p>
+<p>$\mathbb{R}^n\rightarrow\mathbb{R}^n$ 的线性变换可以用矩阵来表示 $T(x)&#x3D;Ax$，其中 $A&#x3D;(T(e_1),T(e_2),…,T(e_n))$</p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>线性代数 复习笔记</p><p><a href="https://cu-oh-2.github.io/post/线性代数/">https://cu-oh-2.github.io/post/线性代数/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Cu_OH_2</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-06-04</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-06-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E6%95%B0%E5%AD%A6/">数学</a><a class="link-muted mr-2" rel="tag" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"><span class="level-item">概率论与数理统计 复习笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/104898033" alt="Cu_OH_2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cu_OH_2</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Cu-OH-2" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="洛谷" href="https://www.luogu.com.cn/user/545900"><i class="fas fa-list"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Codeforces" href="https://codeforces.com/profile/Cu_OH_2"><i class="fas fa-code"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="牛客竞赛" href="https://ac.nowcoder.com/acm/contest/profile/562512097"><i class="fas fa-flag"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/renbaoshuo/hexo-for-oiers" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo for OIers</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%88%B7%E9%A2%98/"><span class="level-start"><span class="level-item">刷题</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-04T00:00:00.000Z">2024-06-04</time></p><p class="title"><a href="/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-03T00:00:00.000Z">2024-06-03</time></p><p class="title"><a href="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-27T00:00:00.000Z">2024-05-27</time></p><p class="title"><a href="/post/2024.5%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">2024.5 刷题笔记</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-17T00:00:00.000Z">2024-05-17</time></p><p class="title"><a href="/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-04T00:00:00.000Z">2024-05-04</time></p><p class="title"><a href="/post/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/">移动语义 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/STL/"><span class="tag">STL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="tag">智能指针</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><span class="tag">概率论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><span class="tag">移动语义</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">502 Bad Gateway</a><p class="is-size-7"><span>&copy; 2024 Cu_OH_2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="icon" href="/fab%20fa-github">icon</a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="url" href="https://github.com/Cu-OH-2">url</a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
