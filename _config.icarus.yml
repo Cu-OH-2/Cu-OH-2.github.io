@@ -6,12 +6,12 @@ variant: default
 
 # Logo
 logo:
-  text: Hexo for OIers
+  text: 502 Bad Gateway
 
 # 页面元数据配置
 head:
   # 网站图标的 URL 或路径
-  favicon: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+  favicon: https://avatars.githubusercontent.com/u/104898033
 
   # Web App 配置
   # https://developer.mozilla.org/en-US/docs/Web/Manifest
@@ -125,15 +125,8 @@ navbar:
 footer:
   # 显示在页脚部分右侧的链接
   links:
-    Creative Commons:
-      icon: fab fa-creative-commons
-      url: "https://creativecommons.org/"
-    Attribution 4.0 International:
-      icon: fab fa-creative-commons-by
-      url: "https://creativecommons.org/licenses/by/4.0/"
-    Download on GitHub:
-      icon: fab fa-github
-      url: "https://github.com/renbaoshuo/hexo-for-oiers"
+    icon: fab fa-github
+    url: "https://github.com/Cu-OH-2"
 
 # 文章相关配置
 article:
@@ -152,7 +145,7 @@ article:
   readtime: false
   # 是否显示更新时间。
   # 对于 `auto` ，仅当设置了 `page.updated` 且其值不同于 `page.date` 时才显示文章更新时间
-  update_time: true
+  update_time: false
   # 文章尾部版权协议提示
   licenses:
     Creative Commons:
@@ -204,27 +197,30 @@ widgets:
     position: left
     type: profile
     # 作者
-    author: Hexo for OIers
+    author: Cu_OH_2
     # Author title
-    author_title:
+    author_title: 
     # 位置
-    location: localhost
+    location: 上海
     # 头像
-    avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+    avatar: https://avatars.githubusercontent.com/u/104898033
     # 是否使用圆形头像
-    avatar_rounded: false
+    avatar_rounded: True
     # Gravatar 邮箱地址
     gravatar:
     # 「关注我」按钮的链接
-    follow_link: https://github.com/renbaoshuo
+    follow_link: https://github.com/Cu-OH-2
     # 社交按钮
     social_links:
-      Github:
-        icon: fab fa-github
-        url: https://github.com/renbaoshuo/hexo-for-oiers
-      RSS:
-        icon: fas fa-rss
-        url: /atom.xml
+      洛谷:
+        icon: fas fa-list
+        url: https://www.luogu.com.cn/user/545900
+      Codeforces:
+        icon: fas fa-code
+        url: https://codeforces.com/profile/Cu_OH_2
+      牛客竞赛:
+        icon: fas fa-flag
+        url: https://ac.nowcoder.com/acm/contest/profile/562512097
   # 文章目录
   - position: left
     type: toc
@@ -239,9 +235,6 @@ widgets:
     type: links
     # 链接的名称和指向
     links:
-      Hexo: https://hexo.io
-      Bulma: https://bulma.io
-      Baoshuo: https://baoshuo.ren
       Hexo for OIers: https://github.com/renbaoshuo/hexo-for-oiers
   # 分类
   - position: left
