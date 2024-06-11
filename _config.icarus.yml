@@ -213,14 +213,17 @@ widgets:
     # 社交按钮
     social_links:
       洛谷:
-        icon: fas fa-list
+        icon: fas fa-seedling
         url: https://www.luogu.com.cn/user/545900
       Codeforces:
-        icon: fas fa-code
+        icon: fas fa-sun
         url: https://codeforces.com/profile/Cu_OH_2
       牛客竞赛:
-        icon: fas fa-flag
+        icon: fas fa-leaf
         url: https://ac.nowcoder.com/acm/contest/profile/562512097
+      Leetcode:
+        icon: fas fa-snowflake
+        url: https://leetcode.cn/u/cu-oh-2/
   # 文章目录
   - position: left
     type: toc
