@@ -235,7 +235,8 @@ widgets:
     type: links
     # 链接的名称和指向
     links:
-      Hexo for OIers: https://github.com/renbaoshuo/hexo-for-oiers
+      Floyd算法与动态规划: ../../pdf/Floyd算法与动态规划.pdf
+      STL容器与算法应用: ../../pdf/STL容器与算法应用.pdf
   # 分类
   - position: left
     type: categories

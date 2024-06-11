@@ -10,7 +10,7 @@ permalink: /about/ # 在此处修改链接后记得在 `_config.icarus.yml` 中�
 ### 关于我
 - 同济大学软件学院在读本科生
 - 人菜瘾大 ACMer（算法竞赛选手）
-- 热爱数学和编程，追求优雅与简洁
+- 热爱数学与编程，追求优雅与效率
 
 ### 联系方式
 - E-mail：Xinyu_Lin@tongji.edu.cn
