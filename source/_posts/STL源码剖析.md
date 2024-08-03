@@ -233,7 +233,7 @@ excerpt: 《STL源码剖析》读书笔记
 
 - STL 的算法都经过泛型化，只要传入的迭代器能够进行算法所需的操作，例如前进、后退、提领等，算法就能在任何数据类型和数据结构上完成。
 
-- 部分算法概览（加粗为算法竞赛中常用算法）
+- 部分算法概览
     - `<numeric>`
       - `accumulate()`：计算所有元素与初始值进行二元运算的结果（默认为求和）
       - `adjacent_difference()`：构造差分序列
@@ -241,12 +241,12 @@ excerpt: 《STL源码剖析》读书笔记
       - `inner_product()`：计算两向量内积
     - `<algorithm>`
       - `equal()`：判断两序列相等
-      - **`fill()`** / `fill_n()`：将序列中所有元素/前 n 个元素改填新值
+      - `fill()` / `fill_n()`：将序列中所有元素/前 n 个元素改填新值
       - `iter_swap()`：将两迭代器所指元素对调
       - `lexicographical_compare()`：字典序比较两序列
-      - **`max()`** / **`min()`**：最大值/最小值
+      - `max()` / `min()`：最大值/最小值
       - `mismatch()`：求两序列第一个失配点
-      - **`swap()`**：交换两对象内容
+      - `swap()`：交换两对象内容
       - `copy()` / `copy_backward()`：顺序/倒序复制序列
       - `set_union()` / `set_intersection()` / `set_difference()` / `set_symmetric_difference()`：集合并/交/差/对称差
       - `make_heap()` / `push_heap()` / `pop_heap()` / `sort_heap()`：堆实现算法
@@ -255,25 +255,25 @@ excerpt: 《STL源码剖析》读书笔记
       - `find()` / `find_if()`：找出第一个等于指定值/满足指定条件的元素
       - `for_each()`：将仿函数施行于序列上每一元素
       - `generate()` / `generate_n()`将仿函数结果填写在序列所有元素/前 n 个元素上
-      - **`max_element()`** / **`min_element()`**：找最大值/最小值位置
+      - `max_element()` / `min_element()`：找最大值/最小值位置
       - `merge()`：合并有序序列到新序列
       - `replace()` / `replace_copy()`：将旧值以新值取代/在新序列上操作
       - `replace_if()` / `replace_copy_if()`：取代满足条件的元素/在新序列上操作
-      - **`reverse()`** / `reverse_copy()`：将序列倒序/在新序列上操作
-      - `rotate()` / `rotate_copy()`：交换 $[begin,middle)$ 和 $[middle,last)$ /在新序列上操作
+      - `reverse()` / `reverse_copy()`：将序列倒序/在新序列上操作
+      - `rotate()` / `rotate_copy()`：交换 $[\text{begin},\text{middle})$ 和 $[\text{middle},\text{last})$ /在新序列上操作
       - `search()` / `search_n()`：找出子序列/子序列前 n 个元素的首匹配点
       - `swap_ranges()`：交换等长区间
       - `transform()`：将仿函数施行于序列并由结果产生一个新序列
-      - **`unique()`** / `unique_copy()`：移除重复元素并返回尾指针/在新序列上操作
-      - **`lower_bound()`** / **`upper_bound()`**：在**有序区间**上二分查找第一个大于等于/大于指定值的元素
+      - `unique()` / `unique_copy()`：移除重复元素并返回尾指针/在新序列上操作
+      - `lower_bound()` / `upper_bound()`：在**有序区间**上二分查找第一个大于等于/大于指定值的元素
       - `binary_search()`：在**有序区间**上二分查找指定值
-      - **`next_permutation()`** / `prev_permutation()`：将序列变为字典序升序下的下一个/上一个排列，返回是否操作成功
-      - **`random_shuffle()`**：将序列随机打乱
+      - `next_permutation()` / `prev_permutation()`：将序列变为字典序升序下的下一个/上一个排列，返回是否操作成功
+      - `random_shuffle()`：将序列随机打乱
       - `partial_sort()`：利用堆排序将最小的若干元素置于序列首端并排序，时间复杂度 $O(nlogm)$
-      - **`sort()`**：排序。数据量大时采用**快速排序**，分段后对较小段采用**插入排序**，递归层次过深时采用**堆排序**。
+      - `sort()`：排序。数据量大时采用**快速排序**，分段后对较小段采用**插入排序**，递归层次过深时采用**堆排序**。
       - `equal_range()`：在**有序区间**上二分查找等于指定值的元素区间
       - `inplace_merge()`：原地合并两段连续的**有序序列**
-      - **`nth_element()`**：使第 k 大元素在位置 k，且其前方元素都比其小，后方元素都比其大。使用算法类似**快速排序**的划分区间，但只划分 nth 所在区间，时间复杂度平均 $O(n)$，最坏 $O(n^2)$
+      - `nth_element()`：使第 k 大元素在位置 k，且其前方元素都比其小，后方元素都比其大。使用算法类似**快速排序**的划分区间，但只划分 nth 所在区间，时间复杂度平均 $O(n)$，最坏 $O(n^2)$
       - `merge_sort()`：归并排序
 
 ## 第七章 - 仿函数
