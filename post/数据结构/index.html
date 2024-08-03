@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>数据结构 复习笔记 - 502 Bad Gateway</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="502 Bad Gateway"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/104898033"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="502 Bad Gateway"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="《数据结构》复习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="数据结构 复习笔记"><meta property="og:url" content="https://cu-oh-2.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><meta property="og:site_name" content="502 Bad Gateway"><meta property="og:description" content="《数据结构》复习笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cu-oh-2.github.io/images/landscape.jpg"><meta property="article:published_time" content="2024-08-04T00:00:00.000Z"><meta property="article:modified_time" content="2024-08-03T17:27:45.417Z"><meta property="article:author" content="Cu_OH_2"><meta property="article:tag" content="数据结构"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cu-oh-2.github.io/images/landscape.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cu-oh-2.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"},"headline":"数据结构 复习笔记","image":["https://cu-oh-2.github.io/images/landscape.jpg"],"datePublished":"2024-08-04T00:00:00.000Z","dateModified":"2024-08-03T17:27:45.417Z","author":{"@type":"Person","name":"Cu_OH_2"},"publisher":{"@type":"Organization","name":"502 Bad Gateway","logo":{"@type":"ImageObject","url":{"text":"502 Bad Gateway"}}},"description":"《数据结构》复习笔记"}</script><link rel="canonical" href="https://cu-oh-2.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><link rel="icon" href="https://avatars.githubusercontent.com/u/104898033"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0-rc1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">502 Bad Gateway</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/landscape.jpg" alt="数据结构 复习笔记"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-08-04T00:00:00.000Z" title="8/4/2024, 12:00:00 AM">2024-08-04</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div></div><h1 class="title is-3 is-size-4-mobile">数据结构 复习笔记</h1><div class="content"><h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p>线性表是一种逻辑结构，表示元素有之间一对一的相邻关系，对应的存储结构有顺序表、链表。</p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表的种类：单向链表、双向链表、循环链表、静态链表</p>
+<p>头结点的作用：</p>
+<ul>
+<li>第一个元素结点的操作和其他元素的操作一致，不用特殊处理</li>
+<li>无论链表是否为空，头指针都非空</li>
+</ul>
+<h3 id="顺序表和链表的对比"><a href="#顺序表和链表的对比" class="headerlink" title="顺序表和链表的对比"></a>顺序表和链表的对比</h3><p>顺序表的优点：</p>
+<ul>
+<li>随机访问</li>
+<li>不需要存额外信息，存储密度高</li>
+<li>Cache 命中率高（符合局部性原理）</li>
+</ul>
+<p>链表的优点：</p>
+<ul>
+<li>插入删除简单</li>
+<li>可动态分配空间，不存在空间浪费</li>
+</ul>
+<h3 id="稀疏矩阵的快速转置"><a href="#稀疏矩阵的快速转置" class="headerlink" title="稀疏矩阵的快速转置"></a>稀疏矩阵的快速转置</h3><p>稀疏矩阵一般用三元组存储，所有元素先按行后按列排序。快速转置算法先记录转置后每一行即原来每一列的元素个数，然后计算出每列元素在新表中的首位置，最后按顺序扫描旧表元素，存放在新表对应位置。</p>
+<h3 id="字符串-KMP-算法"><a href="#字符串-KMP-算法" class="headerlink" title="字符串 KMP 算法"></a>字符串 KMP 算法</h3><p>next 数组代表失配时模式串指针的转移目标，同时也是模式串每个前缀的最长前后缀长度，可以递推计算。</p>
+<h2 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h2><p>栈和队列也属于线性表，但是支持的操作是线性表的子集。</p>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>共享栈：利用栈底位置不变性，让两个栈共享一个数组空间</p>
+<p>链式栈的特点：</p>
+<ul>
+<li>无栈满问题，可动态扩充空间</li>
+<li>插入删除都只需要在链头进行</li>
+</ul>
+<p>$n$ 个元素顺序进栈的出栈序列种类数：卡特兰数 $\frac{1}{n+1}C_{2n}^{n}$</p>
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>队列的种类：循环队列、链式队列、双端队列、优先队列</p>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树：度不超过 $2$ 的树</p>
+<p>满二叉树：所有非叶结点都有两个子结点，总结点数为 $2^h-1$</p>
+<p>完全二叉树：满二叉树最后一层从右向左缺失部分结点</p>
+<p>中序+前序&#x2F;后序可以唯一确定一棵二叉树，但前序+后序不行。</p>
+<p>$n$ 个结点的二叉树种类数：卡特兰数 $\frac{1}{n+1}C_{2n}^{n}$</p>
+<h3 id="树的表示"><a href="#树的表示" class="headerlink" title="树的表示"></a>树的表示</h3><p>广义表：线性表的递归拓展</p>
+<p>父指针表示法：记录每个结点的父结点</p>
+<p>左子女右兄弟表示法：可将森林转为二叉树</p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>堆属于完全二叉树，通常用数组存储，方便父子关系的表达。</p>
+<p>堆的调整：建堆和插入时从下往上调整，移除时从上往下调整</p>
+<h2 id="集合与搜索"><a href="#集合与搜索" class="headerlink" title="集合与搜索"></a>集合与搜索</h2><h3 id="等价类的链表算法"><a href="#等价类的链表算法" class="headerlink" title="等价类的链表算法"></a>等价类的链表算法</h3><p>插入 $(i,j)$ 等价关系时，将 $i$ 加入 $j$ 链表，将 $j$ 加入 $i$ 链表；输出时用一个数组记录所有元素是否已输出，然后遍历所有链表，在链表 $x$ 中遍历到元素 $y$ 时递归遍历链表 $y$，即可输出所有与 $x$ 等价的元素，时间复杂度 $O(n+m)$</p>
+<h3 id="AVL-树"><a href="#AVL-树" class="headerlink" title="AVL 树"></a>AVL 树</h3><p>AVL 是一种二叉搜索树，满足每个结点的左子树和右子树高度差（平衡因子）不超过 $1$，在修改后，若平衡被打破，需要进行平衡性旋转恢复平衡。</p>
+<p>插入结点时，向上寻找失衡结点，并逐个进行平衡化旋转；对于每个失衡结点，找到回溯路径上其下方的两个结点，若这三个结点呈直线则进行单旋，若呈折线则进行双旋：</p>
+<ul>
+<li><p>左单旋&#x2F;右单旋</p>
+<div style="text-align: center;">
+<img src="../../images/数据结构/insert-single.png" alt="AVL 树插入后的单旋">
+</div>
+</li>
+<li><p>左右双旋&#x2F;右左双旋</p>
+<div style="text-align: center;">
+<img src="../../images/数据结构/insert-double.png" alt="AVL 树插入后的双旋">
+</div></li>
+</ul>
+<p>删除结点时，向上寻找失衡结点，并逐个进行平衡化旋转；对于每个失衡结点，找到其不在回溯路径上的子结点，若两结点的删除前的平衡因子相差 $0$ 或 $1$ 则进行单旋，若两结点删除前的平衡因子相差 $2$ 则进行双旋：</p>
+<ul>
+<li><p>左单旋&#x2F;右单旋</p>
+<div style="text-align: center;">
+<img src="../../images/数据结构/delete-single.png" alt="AVL 树删除后的单旋">
+</div>
+</li>
+<li><p>左右双旋&#x2F;右左双旋</p>
+<div style="text-align: center;">
+<img src="../../images/数据结构/delete-double.png" alt="AVL 树删除后的双旋">
+</div></li>
+</ul>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h3 id="十字链表-amp-邻接多重表"><a href="#十字链表-amp-邻接多重表" class="headerlink" title="十字链表&amp;邻接多重表"></a>十字链表&amp;邻接多重表</h3><p>十字链表是针对有向图的一种存图方式。对于每条边，记录其两端的点，以及起点的下一条入边和终点的下一条出边；对于每个点，记录其第一条入边和第一条出边。</p>
+<p>邻接多重表是针对无向图的一种存图方式，对于每条边，记录其两端的点，以及两个点的下一条邻接边；对于每个点，记录其第一条邻接边。</p>
+<h3 id="图的连通性"><a href="#图的连通性" class="headerlink" title="图的连通性"></a>图的连通性</h3><p>重连通分量：点双连通分量</p>
+<p>关节点：割点</p>
+<h3 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h3><p>Kruskal 算法：选边，稀疏图</p>
+<p>Prim 算法：选点，稠密图</p>
+<h3 id="最短路"><a href="#最短路" class="headerlink" title="最短路"></a>最短路</h3><p>Bellman-Ford 算法：任意边权单源最短路</p>
+<p>Dijkstra 算法：非负边权单源最短路</p>
+<p>Floyd 算法：多源最短路</p>
+<h3 id="活动网络"><a href="#活动网络" class="headerlink" title="活动网络"></a>活动网络</h3><p>找关键路径：先按拓扑序 DP 出最早开始时间，再按逆拓扑序 DP 出最晚开始时间，二者相等的即关键活动</p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>直接插入排序：暴力枚举插入位置，$O(n^2)$，稳定</p>
+<p>折半插入排序：二分搜索插入位置，$O(n^2)$，稳定</p>
+<p>链表插入排序：使用链表存储序列，$O(n^2)$，稳定</p>
+<p>希尔排序：选择一个 $gap_0&lt;n$，每次在间隔为 $gap_i$ 的元素之间使用直接插入排序，并设置 $gap_{i+1}&#x3D;\lceil\frac{gap_i}{2}\rceil$，直到 $gap_m&#x3D;1$，时间复杂度未知，不稳定</p>
+<h3 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h3><p>冒泡排序：从右到左两两交换，使得前缀有序，$O(n^2)$，稳定</p>
+<p>快速排序：用双指针将元素划分到基准两侧，分治计算，平均 $O(n\log n)$&#x2F;最坏 $O(n^2)$，不稳定</p>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>直接选择排序：每次选择最小的交换到左边，$O(n^2)$，不稳定</p>
+<p>锦标赛排序：用完全二叉树模拟锦标赛过程，$O(n\log n)$，稳定</p>
+<p>堆排序：原地建堆，$O(n\log n)$，不稳定</p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>普通归并排序：$O(n\log n)$，稳定</p>
+<p>链表归并排序：不需要额外空间，$O(n\log n)$，稳定</p>
+<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>最高位优先：先分组再收集，递归分治，$O(d(n+radix))$，稳定</p>
+<p>最低位优先：先分组再收集，但不用分治，$O(d(n+radix))$，稳定</p>
+<h3 id="外排序"><a href="#外排序" class="headerlink" title="外排序"></a>外排序</h3><p>待排序信息大于内存容量，需要将部分信息存储在外存上；采用多路归并思想。</p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>数据结构 复习笔记</p><p><a href="https://cu-oh-2.github.io/post/数据结构/">https://cu-oh-2.github.io/post/数据结构/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Cu_OH_2</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-08-04</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-08-03</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0&amp;%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0&amp;%E8%B4%9D%E5%B0%94%E6%95%B0/"><span class="level-item">卡特兰数&amp;斯特林数&amp;贝尔数 学习笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/104898033" alt="Cu_OH_2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cu_OH_2</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">15</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">15</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Cu-OH-2" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="洛谷" href="https://www.luogu.com.cn/user/545900"><i class="fas fa-seedling"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Codeforces" href="https://codeforces.com/profile/Cu_OH_2"><i class="fas fa-sun"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="牛客竞赛" href="https://ac.nowcoder.com/acm/contest/profile/562512097"><i class="fas fa-leaf"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Leetcode" href="https://leetcode.cn/u/cu-oh-2/"><i class="fas fa-snowflake"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="../../pdf/Floyd算法与动态规划.pdf" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Floyd算法与动态规划</span></span></a></li><li><a class="level is-mobile" href="../../pdf/STL容器与算法应用.pdf" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">STL容器与算法应用</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%88%B7%E9%A2%98/"><span class="level-start"><span class="level-item">刷题</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-04T00:00:00.000Z">2024-08-04</time></p><p class="title"><a href="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-01T00:00:00.000Z">2024-08-01</time></p><p class="title"><a href="/post/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0&amp;%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0&amp;%E8%B4%9D%E5%B0%94%E6%95%B0/">卡特兰数&amp;斯特林数&amp;贝尔数 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-16T00:00:00.000Z">2024-06-16</time></p><p class="title"><a href="/post/Git/">Git 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-04T00:00:00.000Z">2024-06-04</time></p><p class="title"><a href="/post/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-03T00:00:00.000Z">2024-06-03</time></p><p class="title"><a href="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/STL/"><span class="tag">STL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA/"><span class="tag">图论</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="tag">数据结构</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="tag">智能指针</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><span class="tag">概率论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><span class="tag">移动语义</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">502 Bad Gateway</a><p class="is-size-7"><span>&copy; 2024 Cu_OH_2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="icon" href="/fab%20fa-github">icon</a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="url" href="https://github.com/Cu-OH-2">url</a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
