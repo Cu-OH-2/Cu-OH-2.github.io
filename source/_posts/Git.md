@@ -5,6 +5,7 @@ tags:
   - Git
 categories:
   - 学习
+cover: images/brain.jpg
 excerpt: Git学习笔记
 ---
 ## 简介

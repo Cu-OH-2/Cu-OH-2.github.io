@@ -6,6 +6,7 @@ tags:
   - 图论
 categories:
   - 学习
+cover: images/brain.jpg
 excerpt: Prüfer 序列简要总结
 ---
 
