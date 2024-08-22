@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>离散数学 复习笔记 - 502 Bad Gateway</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="502 Bad Gateway"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/104898033"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="502 Bad Gateway"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="《离散数学》复习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="离散数学 复习笔记"><meta property="og:url" content="https://cu-oh-2.github.io/post/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"><meta property="og:site_name" content="502 Bad Gateway"><meta property="og:description" content="《离散数学》复习笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cu-oh-2.github.io/images/blue.png"><meta property="article:published_time" content="2024-08-20T00:00:00.000Z"><meta property="article:modified_time" content="2024-08-22T07:22:40.067Z"><meta property="article:author" content="Cu_OH_2"><meta property="article:tag" content="离散数学"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cu-oh-2.github.io/images/blue.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cu-oh-2.github.io/post/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"},"headline":"离散数学 复习笔记","image":["https://cu-oh-2.github.io/images/blue.png"],"datePublished":"2024-08-20T00:00:00.000Z","dateModified":"2024-08-22T07:22:40.067Z","author":{"@type":"Person","name":"Cu_OH_2"},"publisher":{"@type":"Organization","name":"502 Bad Gateway","logo":{"@type":"ImageObject","url":{"text":"502 Bad Gateway"}}},"description":"《离散数学》复习笔记"}</script><link rel="canonical" href="https://cu-oh-2.github.io/post/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"><link rel="icon" href="https://avatars.githubusercontent.com/u/104898033"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0-rc1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">502 Bad Gateway</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/blue.png" alt="离散数学 复习笔记"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-08-20T00:00:00.000Z" title="8/20/2024, 12:00:00 AM">2024-08-20</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div></div><h1 class="title is-3 is-size-4-mobile">离散数学 复习笔记</h1><div class="content"><h2 id="1-命题逻辑"><a href="#1-命题逻辑" class="headerlink" title="1 命题逻辑"></a>1 命题逻辑</h2><h3 id="命题符号化"><a href="#命题符号化" class="headerlink" title="命题符号化"></a>命题符号化</h3><p>相关概念</p>
+<ul>
+<li>命题：可以判断真假的陈述句</li>
+<li>简单命题&#x2F;复合命题</li>
+<li>命题常项&#x2F;命题变项</li>
+</ul>
+<h3 id="联结词"><a href="#联结词" class="headerlink" title="联结词"></a>联结词</h3><p>优先级顺序：否定 $\neg p$ &gt; 合取 $p\land q$ &gt; 析取 $p\lor q$ &gt; 蕴含 $p\rightarrow q$ &gt; 等价 $p\leftrightarrow q$</p>
+<h3 id="命题公式"><a href="#命题公式" class="headerlink" title="命题公式"></a>命题公式</h3><p>相关概念</p>
+<ul>
+<li>赋值、成真赋值&#x2F;成假赋值</li>
+<li>重言式&#x2F;矛盾式&#x2F;可满足式</li>
+<li>真值表&#x2F;真值函数：$n$ 个命题变项有 $2^n$ 种赋值，每种赋值可能对应两种函数值，因此共有 $2^{2^n}$ 种赋值集合到函数值集合的映射，即可以形成 $2^{2^n}$ 种不同的真值函数</li>
+</ul>
+<p>命题公式的层数</p>
+<ul>
+<li>$d(\neg p)&#x3D;d(p)+1$</li>
+<li>$d(p\land q)&#x3D;\max(d(p),d(q))+1$</li>
+<li>其余二元联结词同上</li>
+</ul>
+<h3 id="等值演算"><a href="#等值演算" class="headerlink" title="等值演算"></a>等值演算</h3><p>等值 $A\Leftrightarrow B$：$A\leftrightarrow B$ 是重言式</p>
+<p>演算公式</p>
+<ul>
+<li>德·摩根律<ul>
+<li>$\neg (A\lor B)\Leftrightarrow \neg A\land \neg B$</li>
+<li>$\neg (A\land B)\Leftrightarrow \neg A\lor \neg B$</li>
+</ul>
+</li>
+<li>蕴含等值式：$A\rightarrow B\Leftrightarrow \neg A\lor B$</li>
+<li>等价等值式：$A\leftrightarrow B\Leftrightarrow (A\rightarrow B)\land (B\rightarrow A)$</li>
+</ul>
+<h3 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h3><p>相关概念</p>
+<ul>
+<li>析&#x2F;合取范式：有限个简单合&#x2F;析取式构成的析&#x2F;合取式</li>
+<li>极小项 $m_i$&#x2F;极大项 $M_i$：每个命题变项出现一次的简单合&#x2F;析取式</li>
+<li>主析&#x2F;合取范式：极小&#x2F;大项构成的析&#x2F;合取式</li>
+</ul>
+<p>存在性与唯一性</p>
+<ul>
+<li>析&#x2F;合取范式一定存在，但不唯一</li>
+<li>主析&#x2F;合取范式一定存在且唯一</li>
+</ul>
+<p>极大项与极小项的关系：$m_i&#x3D;\neg M_i$</p>
+<h3 id="联结词全功能集"><a href="#联结词全功能集" class="headerlink" title="联结词全功能集"></a>联结词全功能集</h3><p>与非联结词和或非联结词</p>
+<ul>
+<li>与非 $p\uparrow q\Leftrightarrow\neg (p\land q)$</li>
+<li>或非 $p\downarrow q\Leftrightarrow\neg (p\lor q)$</li>
+</ul>
+<p>$\lbrace\neg,\land\rbrace,\lbrace \neg,\lor\rbrace ,\lbrace \neg,\rightarrow\rbrace ,\lbrace \uparrow\rbrace ,\lbrace \downarrow\rbrace$ 都是联结词全功能集</p>
+<h2 id="2-一阶逻辑"><a href="#2-一阶逻辑" class="headerlink" title="2 一阶逻辑"></a>2 一阶逻辑</h2><h3 id="谓词公式"><a href="#谓词公式" class="headerlink" title="谓词公式"></a>谓词公式</h3><p>相关概念</p>
+<ul>
+<li>个体常项&#x2F;个体变项&#x2F;个体域&#x2F;全总个体域</li>
+<li>谓词常项&#x2F;谓词变项&#x2F;0元谓词&#x2F;特性谓词</li>
+<li>全称量词&#x2F;存在量词</li>
+<li>原子公式&#x2F;谓词公式</li>
+<li>指导变项&#x2F;辖域&#x2F;约束出现&#x2F;自由出现&#x2F;闭式</li>
+<li>逻辑有效式&#x2F;矛盾式&#x2F;可满足式</li>
+<li>解释&#x2F;赋值</li>
+<li>代换实例（命题公式和谓词公式间的关系）</li>
+</ul>
+<p>对个体域的限制可以用特性谓词替代</p>
+<p>闭式在解释后一定是命题，非闭式在解释和赋值后一定是命题</p>
+<p>换名规则：为了避免同一变项既有自由出现又有约束出现，将一个指导变项及其在辖域中所有约束出现替换成新的符号</p>
+<h3 id="一阶逻辑等值"><a href="#一阶逻辑等值" class="headerlink" title="一阶逻辑等值"></a>一阶逻辑等值</h3><p>等值式</p>
+<ul>
+<li>量词否定等值式<ul>
+<li>$\neg \forall xA(x)\Leftrightarrow \exists x\neg A(x)$</li>
+<li>$\neg\exists xA(x)\Leftrightarrow \forall x\neg A(x)$</li>
+</ul>
+</li>
+<li>量词辖域收缩与扩张等值式：<ul>
+<li>$\forall x(A(x)\rightarrow B)\Leftrightarrow \exists xA(x)\rightarrow B$</li>
+<li>$\exists x(A(x)\rightarrow B)\Leftrightarrow \forall xA(x)\rightarrow B$</li>
+<li>$\forall x(B\rightarrow A(x))\Leftrightarrow B\rightarrow \forall x A(x)$</li>
+<li>$\exists x(B\rightarrow A(x))\Leftrightarrow B\rightarrow \exists xA(x)$</li>
+</ul>
+</li>
+<li>量词分配等值式<ul>
+<li>$\forall x(A(x)\land B(x))\Leftrightarrow\forall xA(x)\land \forall xB(x)$</li>
+<li>$\exists x(A(x)\lor B(x))\Leftrightarrow \exists xA(x)\lor \exists B(x)$</li>
+</ul>
+</li>
+</ul>
+<p>前束范式</p>
+<ul>
+<li>一系列约束+辖域，其中辖域中不含量词</li>
+<li>任何公式都存在前束范式，但不唯一</li>
+</ul>
+<h2 id="3-集合"><a href="#3-集合" class="headerlink" title="3 集合"></a>3 集合</h2><h3 id="集合的概念和运算"><a href="#集合的概念和运算" class="headerlink" title="集合的概念和运算"></a>集合的概念和运算</h3><p>相关概念</p>
+<ul>
+<li>补集 $A-B&#x3D;A\cap \sim B$</li>
+<li>幂集 $P(A)&#x3D;\lbrace x|x\subseteq A\rbrace$</li>
+<li>对称差 $A\oplus B&#x3D;(A\cup B)-(A\cap B)$</li>
+</ul>
+<p>运算律</p>
+<ul>
+<li>$A-(B\cup C)&#x3D;(A-B)\cap (A-C)$（德·摩根律）</li>
+<li>$A-(B\cap C)&#x3D;(A-B)\cup (A-C)$（德·摩根律）</li>
+<li>$A\oplus B&#x3D;(A-B)\cup(B-A)$</li>
+</ul>
+<h2 id="4-二元关系与函数"><a href="#4-二元关系与函数" class="headerlink" title="4 二元关系与函数"></a>4 二元关系与函数</h2><h3 id="笛卡尔积与二元关系"><a href="#笛卡尔积与二元关系" class="headerlink" title="笛卡尔积与二元关系"></a>笛卡尔积与二元关系</h3><p>笛卡尔积</p>
+<ul>
+<li>两个集合元素构成的有序对集合</li>
+<li>不符合交换律</li>
+<li>$&lt;&lt;x,y&gt;,z&gt;\neq &lt;x,&lt;y,z&gt;&gt;$，不符合结合律</li>
+</ul>
+<p>相关概念</p>
+<ul>
+<li>定义域 $\text{dom}R$、值域 $\text{ran}R$、域 $\text{fld}R$</li>
+<li>关系的三种表示方法：关系集合、关系矩阵、关系图</li>
+<li>（$A$ 上的）空关系、全域关系 $E_A$、恒等关系 $I_A$</li>
+</ul>
+<h3 id="二元关系的性质"><a href="#二元关系的性质" class="headerlink" title="二元关系的性质"></a>二元关系的性质</h3><p>二元关系的运算</p>
+<ul>
+<li>逆 $F^{-1}&#x3D;\lbrace &lt;x,y&gt;|yFx\rbrace$</li>
+<li>合成 $F\circ G&#x3D;\lbrace &lt;x,y&gt;|xFz\land zGy\rbrace$</li>
+<li>合成对集合并满足分配律，但对集合交分配得到包含关系 $F\circ(G\cap H)\subseteq F\circ G\cap F\circ H$</li>
+<li>$R^0&#x3D;I_A, R^n&#x3D;R^{n-1}\circ R$</li>
+</ul>
+<p>二元关系的性质</p>
+<ul>
+<li>自反性 $I_A\subseteq R$</li>
+<li>反自反性 $I_A\cap R&#x3D;\emptyset$</li>
+<li>对称性 $R^{-1}&#x3D;R$</li>
+<li>反对称性 $R\cap R^{-1}&#x3D;\emptyset$</li>
+<li>传递性 $R\circ R\subseteq R$</li>
+</ul>
+<p>二元关系的闭包：满足条件的最小超集</p>
+<p>闭包的构造</p>
+<ul>
+<li>$r(R)&#x3D;R\cup R^0$</li>
+<li>$s(R)&#x3D;R\cup R^{-1}$</li>
+<li>$t(R)&#x3D;R\cup R^2\cup R^3\cup\cdots$</li>
+</ul>
+<h3 id="等价关系和偏序关系"><a href="#等价关系和偏序关系" class="headerlink" title="等价关系和偏序关系"></a>等价关系和偏序关系</h3><p>相关概念</p>
+<ul>
+<li>等价类&#x2F;商集</li>
+<li>可比&#x2F;盖住</li>
+<li>偏序集&#x2F;全序集</li>
+<li>哈斯图</li>
+</ul>
+<p>等价关系：集合上的<strong>自反、对称、传递</strong>的关系，记作 $x\sim y$</p>
+<p>偏序关系：集合上的<strong>自反、反对称、传递</strong>的关系，记作 $x\preccurlyeq y$</p>
+<p>最大元&#x2F;极大元&#x2F;上界&#x2F;上确界对比</p>
+<ul>
+<li>最大元：在集合中且比所有都大</li>
+<li>极大元：在集合中且不存在更小</li>
+<li>上界：比所有都大</li>
+<li>上确界：上界集合的最小元</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>相关概念</p>
+<ul>
+<li>$B^A$（B上A）：所有 $A$ 到 $B$ 的函数构成的集合</li>
+<li>满射&#x2F;单射&#x2F;双射</li>
+<li>特征函数、自然映射</li>
+</ul>
+<p>函数的复合能够保持满射、单射、双射性质</p>
+<p>只有双射函数才有反函数</p>
+<h2 id="5-图"><a href="#5-图" class="headerlink" title="5 图"></a>5 图</h2><h3 id="图的性质"><a href="#图的性质" class="headerlink" title="图的性质"></a>图的性质</h3><p>相关概念</p>
+<ul>
+<li>空图&#x2F;零图&#x2F;平凡图</li>
+<li>环（自环）&#x2F;平行边（重边）&#x2F;简单图</li>
+<li>生成子图&#x2F;导出子图&#x2F;补图 $\overline G$</li>
+<li>$K_n$：$n$ 阶无向完全图</li>
+</ul>
+<p>握手定理：$\sum_{i&#x3D;1}^n d(v_i)&#x3D;2m$，推论：度数为奇数的顶点个数为偶数</p>
+<p>图的矩阵表示：关联矩阵&#x2F;邻接矩阵&#x2F;可达矩阵</p>
+<h2 id="6-特殊的图"><a href="#6-特殊的图" class="headerlink" title="6 特殊的图"></a>6 特殊的图</h2><h3 id="二部图"><a href="#二部图" class="headerlink" title="二部图"></a>二部图</h3><p>相关概念</p>
+<ul>
+<li>极大匹配&#x2F;最大匹配&#x2F;完美匹配&#x2F;完备匹配</li>
+<li>$K_{n,m}$：完全二部图</li>
+</ul>
+<p>二部图的判定：没有奇环</p>
+<p>完备匹配的充要条件（Hall 定理）：$V_1$ 中任意 $k$ 个顶点都至少邻接 $V_2$ 中 $k$ 个顶点</p>
+<h3 id="欧拉图-amp-哈密顿图"><a href="#欧拉图-amp-哈密顿图" class="headerlink" title="欧拉图&amp;哈密顿图"></a>欧拉图&amp;哈密顿图</h3><p>欧拉通路、欧拉回路的充要条件</p>
+<p>哈密顿通路、哈密顿回路的判定</p>
+<ul>
+<li>$n(n\ge 3)$ 阶简单无向图</li>
+<li>任何一对不相邻顶点的度数之和都大于等于 $n-1$ 则存在哈密顿通路</li>
+<li>任何一对不相邻顶点的度数之和都大于等于 $n$ 则存在哈密顿回路</li>
+</ul>
+<h3 id="平面图"><a href="#平面图" class="headerlink" title="平面图"></a>平面图</h3><p>相关概念</p>
+<ul>
+<li>面&#x2F;边界&#x2F;次数</li>
+<li>极大平面图&#x2F;极小非平面图</li>
+<li>对偶图：以面为点，以边为边</li>
+</ul>
+<p>极大平面图的性质：$n(n\ge 3)$ 阶简单平面图是极大平面图 $\Leftrightarrow$ 连通且每个面的次数都为 $3$</p>
+<p>欧拉公式</p>
+<ul>
+<li>$n-m+r&#x3D;2$，其中 $r$ 为面数</li>
+<li>证明：数学归纳法，有叶删叶，没叶删边</li>
+<li>推广：$n-m+r&#x3D;p+1$，其中 $p$ 为连通分量个数</li>
+</ul>
+<p>库拉图斯基定理</p>
+<ul>
+<li>基础：$K_5$ 和 $K_{3,3}$ 都不是平面图</li>
+<li>定理：平面图 $\Leftrightarrow$ 不含与 $K_5$&#x2F;$K_{3,3}$ 同胚的子图 $\Leftrightarrow$ 不含能收缩到 $K_5$&#x2F;$K_{3,3}$ 的子图</li>
+</ul>
+<p>四色定理：任何平面图都可以用 $4$ 种颜色填充面使得没有相邻的面同色</p>
+<h2 id="7-代数"><a href="#7-代数" class="headerlink" title="7 代数"></a>7 代数</h2><h3 id="二元运算的性质"><a href="#二元运算的性质" class="headerlink" title="二元运算的性质"></a>二元运算的性质</h3><p>二元运算律</p>
+<ul>
+<li>交换律</li>
+<li>结合律</li>
+<li>幂等律 $x\circ x&#x3D;x$</li>
+<li>分配律 </li>
+<li>吸收律 $x*(x\circ y)&#x3D;x,x\circ(x*y)&#x3D;x$</li>
+</ul>
+<p>特异元素</p>
+<ul>
+<li>左&#x2F;右单位元</li>
+<li>左&#x2F;右零元</li>
+<li>左&#x2F;右逆元</li>
+</ul>
+<h3 id="代数系统"><a href="#代数系统" class="headerlink" title="代数系统"></a>代数系统</h3><p>相关概念</p>
+<ul>
+<li>子代数&#x2F;积代数</li>
+<li>单同态&#x2F;满同态&#x2F;同构</li>
+</ul>
+<p>同态代数和积代数都保持交换律、结合律、幂等律</p>
+<p>代数系统 $\overset{可结合}\longrightarrow$ 半群 $\overset{含单位元}\longrightarrow$ 含幺半群（独异点） $\overset{所有数可逆}\longrightarrow$ 群 $\overset{可交换}\longrightarrow$ 交换群</p>
+<p>群的性质</p>
+<ul>
+<li>幂运算</li>
+<li>消去律</li>
+</ul>
+<p>群的中心：可交换子群</p>
+<p>环 $&lt;R,+,\cdot&gt;$</p>
+<ol>
+<li>$&lt;R,+&gt;$ 为阿贝尔群</li>
+<li>$&lt;R,\cdot&gt;$ 为半群</li>
+<li>$\cdot$ 对 $+$ 满足分配律</li>
+</ol>
+<p>域 $&lt;R,+,\cdot&gt;$</p>
+<ol>
+<li>可交换、含单位元、无零因子</li>
+<li>至少有两个元素、非零可逆</li>
+</ol>
+<p>格 $&lt;S,\preccurlyeq&gt;$：任意一对 $\lbrace x,y\rbrace$ 都有上确界和下确界</p>
+<h3 id="典型代数系统"><a href="#典型代数系统" class="headerlink" title="典型代数系统"></a>典型代数系统</h3><p>Klein 四元群</p>
+<table>
+<thead>
+<tr>
+<th>$\circ$</th>
+<th>e</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>e</td>
+<td>e</td>
+<td>a</td>
+<td>b</td>
+<td>c</td>
+</tr>
+<tr>
+<td>a</td>
+<td>a</td>
+<td>e</td>
+<td>c</td>
+<td>b</td>
+</tr>
+<tr>
+<td>b</td>
+<td>b</td>
+<td>c</td>
+<td>e</td>
+<td>a</td>
+</tr>
+<tr>
+<td>c</td>
+<td>c</td>
+<td>b</td>
+<td>a</td>
+<td>e</td>
+</tr>
+</tbody></table>
+<p>循环群：$G&#x3D;\lbrace a^k|k\in\mathbf{Z}\rbrace$</p>
+<p>置换群：由 $n$ 元置换构成</p>
+<p>模 $n$ 整数环：$&lt;\mathbf{Z}_n,\oplus,\odot&gt;$</p>
+<p>有理数域&#x2F;实数域&#x2F;复数域</p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>离散数学 复习笔记</p><p><a href="https://cu-oh-2.github.io/post/离散数学/">https://cu-oh-2.github.io/post/离散数学/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Cu_OH_2</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-08-20</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-08-22</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/2024%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1/"><span class="level-item">2024牛客暑期多校训练营 赛题总结</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/104898033" alt="Cu_OH_2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cu_OH_2</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">16</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Cu-OH-2" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="洛谷" href="https://www.luogu.com.cn/user/545900"><i class="fas fa-seedling"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Codeforces" href="https://codeforces.com/profile/Cu_OH_2"><i class="fas fa-sun"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="牛客竞赛" href="https://ac.nowcoder.com/acm/contest/profile/562512097"><i class="fas fa-leaf"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Leetcode" href="https://leetcode.cn/u/cu-oh-2/"><i class="fas fa-snowflake"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="../../pdf/Floyd算法与动态规划.pdf" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Floyd算法与动态规划</span></span></a></li><li><a class="level is-mobile" href="../../pdf/STL容器与算法应用.pdf" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">STL容器与算法应用</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%88%B7%E9%A2%98/"><span class="level-start"><span class="level-item">刷题</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-20T00:00:00.000Z">2024-08-20</time></p><p class="title"><a href="/post/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-16T00:00:00.000Z">2024-08-16</time></p><p class="title"><a href="/post/2024%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1/">2024牛客暑期多校训练营 赛题总结</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-04T00:00:00.000Z">2024-08-04</time></p><p class="title"><a href="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构 复习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-01T00:00:00.000Z">2024-08-01</time></p><p class="title"><a href="/post/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0&amp;%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0&amp;%E8%B4%9D%E5%B0%94%E6%95%B0/">卡特兰数&amp;斯特林数&amp;贝尔数 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-16T00:00:00.000Z">2024-06-16</time></p><p class="title"><a href="/post/Git/">Git 学习笔记</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/STL/"><span class="tag">STL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA/"><span class="tag">图论</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="tag">数据结构</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="tag">智能指针</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><span class="tag">概率论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"><span class="tag">离散数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><span class="tag">移动语义</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">502 Bad Gateway</a><p class="is-size-7"><span>&copy; 2024 Cu_OH_2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="icon" href="/fab%20fa-github">icon</a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="url" href="https://github.com/Cu-OH-2">url</a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
