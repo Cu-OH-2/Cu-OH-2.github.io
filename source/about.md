@@ -9,9 +9,9 @@ permalink: /about/ # 在此处修改链接后记得在 `_config.icarus.yml` 中�
 - 博客旧址：[CSDN](https://blog.csdn.net/sbdeiheihef)
 
 ### 关于我
-- 同济大学软件学院在读本科生
-- 人菜瘾大 ACMer（算法竞赛选手）
-- 热爱数学和编程，追求优雅与效率
+- 同济大学软件学院大四/浙江大学软件学院研零
+- 算法竞赛选手，人菜瘾大
+- 热爱数学&编程，追求效率&优雅
 
 ### 联系方式
 - E-mail：xinyu_lin@tongji.edu.cn
