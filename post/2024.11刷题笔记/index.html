@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>2024.11 刷题笔记 - 502 Bad Gateway</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="502 Bad Gateway"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/104898033"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="502 Bad Gateway"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="2024 年 11 月的几道值得记录的题"><meta property="og:type" content="blog"><meta property="og:title" content="2024.11 刷题笔记"><meta property="og:url" content="https://cu-oh-2.github.io/post/2024.11%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="502 Bad Gateway"><meta property="og:description" content="2024 年 11 月的几道值得记录的题"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cu-oh-2.github.io/images/icpc.png"><meta property="article:published_time" content="2024-11-25T00:00:00.000Z"><meta property="article:modified_time" content="2024-11-25T13:09:58.596Z"><meta property="article:author" content="Cu_OH_2"><meta property="article:tag" content="算法"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://cu-oh-2.github.io/images/icpc.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cu-oh-2.github.io/post/2024.11%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"},"headline":"2024.11 刷题笔记","image":["https://cu-oh-2.github.io/images/icpc.png"],"datePublished":"2024-11-25T00:00:00.000Z","dateModified":"2024-11-25T13:09:58.596Z","author":{"@type":"Person","name":"Cu_OH_2"},"publisher":{"@type":"Organization","name":"502 Bad Gateway","logo":{"@type":"ImageObject","url":{"text":"502 Bad Gateway"}}},"description":"2024 年 11 月的几道值得记录的题"}</script><link rel="canonical" href="https://cu-oh-2.github.io/post/2024.11%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"><link rel="icon" href="https://avatars.githubusercontent.com/u/104898033"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">502 Bad Gateway</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/icpc.png" alt="2024.11 刷题笔记"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-11-25T00:00:00.000Z" title="11/25/2024, 12:00:00 AM">2024-11-25</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></span></div></div><h1 class="title is-3 is-size-4-mobile">2024.11 刷题笔记</h1><div class="content"><h3 id="GYM102431G"><a href="#GYM102431G" class="headerlink" title="GYM102431G"></a>GYM102431G</h3><h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>在一棵大小为 $n(n\le 2\times 10^5)$ 的树上，结点 $1$ 处有一个标志。两人轮流移动标志，除第一次移动以外，必须保证每次移动的距离严格大于上一次，不能移动者输。求有多少个包含 $1$ 的子图满足在子图上进行游戏时后手必胜。</p>
+<h4 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>很显然，若结点 $1$ 在树的直径中点上则后手必胜，否则先手必胜。结点 $1$ 在树的直径中点上等价为：$1$ 的子结点中，子树深度最深的两个子结点子树深度相同。</li>
+<li>首先要求的是 $1$ 的所有子结点的子树中取不同深度的方案数，直接进行普通树上 DP 的时间复杂度为 $O(n^2)$。然而这种以深度为状态的 DP 可以使用长链剖分优化：在长链上转移时，直接改变 dp 数组的首指针即可。长链剖分和重链剖分一样有链上 dfn 序连续的性质，因此可以使用线段树维护区间和，进行 $O(\log n)$ 合并。</li>
+<li>其次需要根据所求信息计算答案，可以用全体方案数减去最深子树只有一个的情况数。记 $1$ 的子结点集合为 $s$，此时不能直接枚举深度再枚举 $s$ 中所有结点，而是应该根据深度判断需要枚举哪些结点，将枚举次数限制在 $O(n)$ 内。枚举深度时，用线段树维护 $s$ 中结点方案数在深度上的前缀和在位置上的区间积，然后枚举最深的子树位置计算答案即可。</li>
+</ul>
+<hr>
+<h3 id="GYM105487F"><a href="#GYM105487F" class="headerlink" title="GYM105487F"></a>GYM105487F</h3><h4 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h4><p>给定一个长度为 $n(n\le 10^6)$ 的数组 $a(1\le a_i\le 10^6)$，希望创造一个数组 $d$ 使得 $d_i$ 是 $a_i$ 的因数且 $\prod_i d_i&#x3D;y^2$ 是一个完全平方数。求所有可能的 $d$ 对应的 $y$ 的和。</p>
+<h4 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>由 $\sum_{i,j}a_ib_j&#x3D;\sum_i a_i\cdot \sum_j b_j$，发现不同位置、不同质因子对答案的贡献都是独立可拆分的。可以先计算每个位置每个质因数的方案之和再将它们相乘。然而，每个位置方案的合法性并不是独立的，需要保证所有位置的质因数幂之和为偶数。</li>
+<li>可以将方案之和拆分为奇数幂方案之和以及偶数幂方案之和，进行 DP 转移合并，最后答案即为偶数幂方案的 DP 值。</li>
+</ul>
+<hr>
+<h3 id="QOJ7895"><a href="#QOJ7895" class="headerlink" title="QOJ7895"></a>QOJ7895</h3><h4 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h4><p>给定一棵大小为 $n(n\le 10^5)$ 的树和正整数 $k(k\le n)$，求有多少种分法可以将树分为若干大小为 $k$ 或 $k+1$ 的块。</p>
+<h4 id="做法-2"><a href="#做法-2" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>当 $k\le \sqrt{n}$ 时，直接做树上背包即可，时间复杂度为 $O(nk)$。证明如下：将合并过程分为两类，一类是两个都不超过 $k$ 的块合并，这类合并只会发生在大小不超过 $k$ 的最大子树中，相当于对所有不超过 $k$ 的最大子树进行普通 $O(k^2)$ 树上背包，这样的子树不超过 $\frac{n}{k}$ 个，因此这一类合并的时间复杂度 $O(nk)$；另一类是至少有一个块超过 $k$，假设另一个块大小为 $x$，则将 $x$ 个结点合并进来的时间复杂度为 $O(xk)$，因此将整棵树合并进来的时间复杂度为 $O(nk)$。</li>
+<li>当 $k&gt;\sqrt{n}$ 时，可以发现子树中大小为 $k$ 的块的个数 $a$ 能够直接决定大小为 $k+1$ 的块的个数以及上方剩下的结点数，因此可以以 $k$ 块的个数作为第二维进行树上背包，时间复杂度同样为 $O(nk)$。在实现时可以加一维表示与根相连的块大小是否到达 $k+1$，以防止合并过程中多余结点数到达 $k+1$ 后被视为 $0$ 导致还能继续合并。</li>
+</ul>
+<hr>
+<h3 id="CF2037G"><a href="#CF2037G" class="headerlink" title="CF2037G"></a>CF2037G</h3><h4 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h4><p>给定长度为 $n(n\le 2\cdot 10^5)$ 的序列 $a(2\le a_i\le 10^6)$，若 $i&lt;j$ 且 $\gcd(a_i,a_j)&gt;1$ 则从 $i$ 到 $j$ 有一条有向边。求 $1$ 到 $n$ 的路径条数。</p>
+<h4 id="做法-3"><a href="#做法-3" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>记 $dp_i$ 为 $1$ 到 $i$ 的路径条数，则 $dp_i&#x3D;\sum_{j&#x3D;1}^{i-1}[\gcd(a_i,a_j)\neq 1]dp_j$</li>
+<li>记 $s_i&#x3D;\sum_{i|a_j}dp_j$，枚举 $a_i$ 的所有因数作为 $\gcd(a_i,a_j)$，则 $dp_i&#x3D;\sum_{d|a_i}\sum_{\gcd(a_i,a_j)&#x3D;d}dp_j&#x3D;\sum_{d|a_i}(s_d-\sum_{d&lt;x,d|x,x|a_i}s_x)$。此处 $d$ 的贡献需要减去其所有倍数的贡献，但这不方便快速处理。从上往下考虑，每个 $d$ 的贡献会在其所有因子处被减去，且减完后的因子的贡献还会继续向下影响，但每个 $d$ 的影响范围是固定的，不受 $a_i$ 影响，因此可以进行预处理，算出其对答案影响的系数 $k_d$。此时即有 $dp_i&#x3D;\sum_{d|a_i}s_dk_d$。</li>
+<li>预处理系数的方法是：首先将所有值的系数初始化为 $1$，然后从小到大枚举值，将 $i$ 的系数减去 $i$ 的所有因数的系数。</li>
+</ul>
+<hr>
+<h3 id="CF2028E"><a href="#CF2028E" class="headerlink" title="CF2028E"></a>CF2028E</h3><h4 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h4><p>A、B 两人在一棵大小为 $n(n\le 2\cdot 10^5)$ 的树上操纵同一个角色进行游戏。每回合有一半的概率由 A 行动，否则由 B 行动，当一方行动时可以移动角色到相邻结点；角色先到达根结点则 A 胜，先到达叶结点则 B 胜。求角色初始在结点 $i$ 上时 A 获胜的概率。</p>
+<h4 id="做法-4"><a href="#做法-4" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>首先记角色在结点 $i$ 上时 A 获胜的概率为 $ans_i$，则双方的最优策略一定是选择 $ans_x$ 最高&#x2F;最低的相邻结点 $x$ 进行移动；而我们又知道 A 一定会朝根结点方向移动，因此可以推出 B 的策略是向当前子树中最浅的叶结点移动。</li>
+<li>考虑在一条长度为 $n$ 的链上的情况，假设底端结点到顶端结点的编号分别是 $1,2,…,n$，则 $ans_i&#x3D;\frac{ans_{i-1}+ans_{i+1}}{2}$。由此可知在一条路径上若 B 的目标叶结点始终不变，则 $ans$ 是自底向上均匀递增的，即 $ans_i&#x3D;ans_1+\frac{i}{n}(ans_n-ans_1)$。</li>
+<li>由于 B 的目标叶结点的深度只会越来越浅，为了防止 B 的目标变化，我们可以从浅到深遍历所有叶结点，考虑其上方所有未计算点构成的路径，根据第一个已计算点的答案即可得到路径上所有结点的答案。</li>
+</ul>
+<hr>
+<h3 id="CF2038I"><a href="#CF2038I" class="headerlink" title="CF2038I"></a>CF2038I</h3><h4 id="题意-5"><a href="#题意-5" class="headerlink" title="题意"></a>题意</h4><p>有 $n$ 个运动员和 $m$ 个比赛项目 $(nm\le 2\cdot 10^6)$，给定 $0\le a_{ij} \le 1$ 表示运动员 $i$ 是否擅长项目 $j$。比赛开始时，你可以选定一个项目 $x$，让运动员们按照 $x,x+1,…,n,1,…,x-1$ 的顺序进行项目。比拼一个项目时，若此时场上有人擅长该项目，则不擅长的人淘汰；否则没有人淘汰。当场上只剩一人时比赛结束。求假定从每一个项目 $i$ 开始时最终的胜者。</p>
+<h4 id="做法-5"><a href="#做法-5" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>注意到比赛过程与字符串比大小过程相同，比赛胜者即字典序最大者。</li>
+<li>从后往前进行基数排序即可 $O(nm)$ 算出所有答案。</li>
+</ul>
+<hr>
+<h3 id="GYM105484B"><a href="#GYM105484B" class="headerlink" title="GYM105484B"></a>GYM105484B</h3><h4 id="题意-6"><a href="#题意-6" class="headerlink" title="题意"></a>题意</h4><p>给定一个长度为 $n(n\le 5\cdot 10^5)$ 的字符串，由 $1,2,3$ 组成。可以对串进行任意次如下操作之一：</p>
+<ol>
+<li>选择一个 $2$，将其变为 $0$ 或 $1$</li>
+<li>选择两个相邻的 $1$ 并删除</li>
+<li>选择两个相邻的 $0$ 并删除</li>
+</ol>
+<p>求剩余串可能的最小长度。</p>
+<h4 id="做法-6"><a href="#做法-6" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>方法一：将偶数位置的字符取反，则操作变为删除相邻的 $0$ 和 $1$；只要 $0$ 和 $1$ 同时存在就一定有相邻的字符可以删除。因此此时只要贪心地将 $2$ 变为较少的一种字符即可。</li>
+<li>方法二：记 $dp_{i,j}$ 为前 $i$ 个字符进行操作后剩余字符串以 $j$ 结尾时的可能的长度，不难发现 $dp_{i,j}$ 的取值一定是一个连续的区间：当遇到 $0$ 或 $1$，时，所有取值同时加一或减一；当遇到 $2$ 时，取值由 $[l,r]$ 变为 $[l-1,r+1]$。因此可以 DP 维护 $dp_{i,j}$ 的取值，最终答案即为 $\min(l_{n,0},l_{n,1})$。</li>
+</ul>
+<hr>
+<h3 id="P10280"><a href="#P10280" class="headerlink" title="P10280"></a>P10280</h3><h4 id="题意-7"><a href="#题意-7" class="headerlink" title="题意"></a>题意</h4><p>给定两个长度为 $n(n\le 10^6)$ 的二进制串 $s,t$，每次可以交换 $s$ 中距离不超过 $k(k\le n)$ 的两个字符。求使得 $s$ 变为 $t$ 所需要的最小操作次数。</p>
+<h4 id="做法-7"><a href="#做法-7" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>首先找到两个集合 $S_1&#x3D;\lbrace x|s_x&#x3D;0 \land t_x&#x3D;1\rbrace, S_2&#x3D;\lbrace y|s_y&#x3D;1\land t_y&#x3D;0\rbrace$，显然 $|S_1|&#x3D;|S_2|$ 成立，目标即为对两个集合的元素进行匹配，其中匹配 $x$ 和 $y$ 的代价为 $\lceil\frac{|x-y|}{k}\rceil$。</li>
+<li>以按大小顺序的匹配为基准，记此时的总距离为 $D^*&#x3D;\sum_{i} |x_i-y_i|$，可知总距离大于 $D^*$ 的匹配不可能是最优答案，且总距离不可能更小，因此需要在总距离等于 $D^*$ 的匹配中寻找答案。而在 $D$ 相同的情况下，依次使得每个 $(|x-y|+k-1)\bmod k$ 最大一定是最优的。</li>
+<li><strong>保持 $D&#x3D;D^{*}$ 的方法是保持所有元素匹配的方向不变</strong>，如下图。实现的方法是顺序遍历，将暂时无法匹配的元素（一定向右匹配）存入有序集合中，为可以匹配的元素（一定向左匹配）在集合中寻找最佳的匹配对象。</li>
+</ul>
+<div style="text-align: center;">
+  <img src="../../images/2024.11刷题笔记/example.png">
+</div>
+
+<hr>
+<h3 id="CF2041M"><a href="#CF2041M" class="headerlink" title="CF2041M"></a>CF2041M</h3><h4 id="题意-8"><a href="#题意-8" class="headerlink" title="题意"></a>题意</h4><p>给定一个长度为 $n(n\le 10^6)$ 的序列 $a$ 和两种操作：</p>
+<ol>
+<li>任选一个前缀进行排序，记前缀长度为 $x$ 则花费的代价为 $x^2$</li>
+<li>任选一个后缀进行排序，记后缀长度为 $y$ 则花费的代价为 $y^2$</li>
+</ol>
+<p>两种操作可以按任意顺序进行但每种操作最多进行一次。求将整个序列排序需要花费的最小代价。</p>
+<h4 id="做法-8"><a href="#做法-8" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>分别考虑两种进行操作的顺序。假设先进行操作 1 ，枚举操作 1 中选择的前缀的长度，此时序列与目标有序序列的最小公共前缀不需要再排序，剩余的后缀可能需要再进行操作 2。</li>
+<li>因此关键问题是求排序前缀 $x$ 后序列与目标序列的最小公共前缀。<strong>这实际上与前缀 $x$ 中所有元素对应到目标序列中的位置的 MEX 有关</strong>。因此我们只要维护当前前缀的 MEX 即可。不过当 MEX 恰好等于 $x+1$ 时，还需要维护右侧第一个需要改变位置的元素，可以类似双指针均摊 $O(1)$ 维护。</li>
+<li>先进行操作 2 的情况同理。</li>
+</ul>
+<hr>
+<h3 id="GYM105484G"><a href="#GYM105484G" class="headerlink" title="GYM105484G"></a>GYM105484G</h3><h4 id="题意-9"><a href="#题意-9" class="headerlink" title="题意"></a>题意</h4><p>【交互题】给定一棵大小为 $n(n\le 10^5)$ 的二叉树，二叉树中有一个特殊结点。每次可以选择两个结点 $u,v$ 并询问特殊结点距离 $u$ 更近还是距离 $v$ 更近还是一样近，最多进行 $\lfloor \log_2 n\rfloor$ 次询问。求特殊结点是哪一个。</p>
+<h4 id="做法-9"><a href="#做法-9" class="headerlink" title="做法"></a>做法</h4><ul>
+<li>根据询问次数限制，我们考虑每次将猜测范围至少缩小一半，即每次询问需要将猜测范围从 $x$ 缩减到 $\lfloor \frac{x}{2}\rfloor$ 及以下。</li>
+<li>注意到，询问两个结点 $u,v$ 与询问 $u,v$ 连线中点两侧最近的结点得到的结果是相同的，因此可以只考虑询问相邻的点或询问距离为 $2$ 的点。同时还可以发现，猜测范围必定永远是连通的。</li>
+<li>考虑询问距离为 $2$ 的点，此时根据询问结果的不同，剩余的部分分别可能是切断两点之间的边后形成的三块。我们希望这三块的大小都不超过当前猜测范围结点数的一半。如果有一块超过，我们总是可以移动询问的目标，使得较大的块拆成两份，其余的两块合并，此时合并得的块一定符合要求。由此可知，当猜测范围有至少三个结点时，一定存在一对距离为 $2$ 的结点可以询问使得猜测范围至少缩小一半。最后再特判一下猜测范围大小为 $2$ 的情况即可。</li>
+<li>在实现时，可以枚举所有结点，此时询问的结点对可能是左子和父&#x2F;右子和父&#x2F;左子和右子。</li>
+</ul>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>2024.11 刷题笔记</p><p><a href="https://cu-oh-2.github.io/post/2024.11刷题笔记/">https://cu-oh-2.github.io/post/2024.11刷题笔记/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Cu_OH_2</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-11-25</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-11-25</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/2024.9-2024.10%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"><span class="level-item">2024.9-2024.10 刷题笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/104898033" alt="Cu_OH_2"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Cu_OH_2</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">22</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">17</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Cu-OH-2" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="洛谷" href="https://www.luogu.com.cn/user/545900"><i class="fas fa-seedling"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Codeforces" href="https://codeforces.com/profile/Cu_OH_2"><i class="fas fa-sun"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="牛客竞赛" href="https://ac.nowcoder.com/acm/contest/profile/562512097"><i class="fas fa-leaf"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Leetcode" href="https://leetcode.cn/u/cu-oh-2/"><i class="fas fa-snowflake"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="../../pdf/Floyd算法与动态规划.pdf" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Floyd算法与动态规划</span></span></a></li><li><a class="level is-mobile" href="../../pdf/STL容器与算法应用.pdf" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">STL容器与算法应用</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%88%B7%E9%A2%98/"><span class="level-start"><span class="level-item">刷题</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">学习</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-11-25T00:00:00.000Z">2024-11-25</time></p><p class="title"><a href="/post/2024.11%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">2024.11 刷题笔记</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-10-31T00:00:00.000Z">2024-10-31</time></p><p class="title"><a href="/post/2024.9-2024.10%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">2024.9-2024.10 刷题笔记</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-09-05T00:00:00.000Z">2024-09-05</time></p><p class="title"><a href="/post/%E5%8F%8D%E6%BC%94%E5%8F%98%E6%8D%A2/">反演变换 简要总结</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-09-05T00:00:00.000Z">2024-09-05</time></p><p class="title"><a href="/post/%E6%A0%BC%E9%9B%B7%E7%A0%81/">格雷码 简要总结</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-08-26T00:00:00.000Z">2024-08-26</time></p><p class="title"><a href="/post/2024.6-2024.8%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">2024.6-2024.8 刷题笔记</a></p><p class="categories"><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/"><span class="level-start"><span class="level-item">2024</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C-11/"><span class="tag">C++11</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/STL/"><span class="tag">STL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%AE%BA/"><span class="tag">图论</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="tag">数据结构</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"><span class="tag">智能指针</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><span class="tag">概率论</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><span class="tag">正则表达式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"><span class="tag">离散数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E8%AF%AD%E4%B9%89/"><span class="tag">移动语义</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="tag">线性代数</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"><span class="tag">组合数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"><span class="tag">计算几何</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">502 Bad Gateway</a><p class="is-size-7"><span>&copy; 2024 Cu_OH_2</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="icon" href="/fab%20fa-github">icon</a></p><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="url" href="https://github.com/Cu-OH-2">url</a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
