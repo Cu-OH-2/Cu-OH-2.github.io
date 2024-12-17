@@ -10,7 +10,7 @@
     "postinstall": "patch-package"
   },
   "hexo": {
-    "version": "7.0.0-rc1"
+    "version": "7.3.0"
   },
   "dependencies": {
     "bulma-stylus": "0.8.0",
