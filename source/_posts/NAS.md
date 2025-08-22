@@ -17,7 +17,7 @@ NAS（Network Attached Storage）是一种专门用于数据存储和共享的�
 - 装有8个硬盘。其中3个为JBOD模式，用作共享空间，剩下5个支持RAID 5，用作个人空间。
 - 通过SMB协议连接用户文件系统，支持Windows/MacOS/Linux，基于用户/用户组管理读写权限。
   > 其中Linux系统挂载使用的工具虽然名为“mount.cifs”，但该工具已支持SMB2/3，CIFS协议已被现代场景淘汰。
-- 品牌一般会提供对应的电脑/手机客户端，可以在上面进行个人空间的管理。
+- 品牌一般会提供对应的电脑/手机客户端，可以在上面进行设置和空间管理。
 
 ## 在实验室服务器上挂载NAS（Linux）
 ### 1. 切换有效组
@@ -38,7 +38,7 @@ sudo mount -t cifs //**.**.*.***/personal_folder /home/lxy/nas -o username='xyli
 ```
 其中：
 - `**.**.*.***` 是NAS服务器的内网IP。
-- `personal_folder` 是NAS管理员创建的目录。
+- `personal_folder` 是实验室指定用作个人空间的目录。
 - `username` 和 `password` 是NAS管理员给每个人分配的账号密码。
 - `dir_mode=0700` 指仅属主可读/写/进入目录。`0700` 是遵循Linux权限模式的八进制数字，后三位分别代表属主权限、属组权限、其他用户权限。
 - `file_mode=0600` 指仅属主可读/写文件。
