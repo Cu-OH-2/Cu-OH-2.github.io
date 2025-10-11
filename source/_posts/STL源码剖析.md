@@ -3,7 +3,6 @@ title: 《STL源码剖析》读书笔记
 date: 2023-03-22 00:00:00
 tags:
   - C++
-  - STL
 categories:
   - 学习
 cover: images/STL源码剖析/封面.png

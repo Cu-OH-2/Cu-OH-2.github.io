@@ -2,8 +2,7 @@
 title: Prüfer 序列 简要总结
 date: 2024-04-25 00:00:00
 tags:
-  - 算法
-  - 图论
+  - 算法竞赛
 categories:
   - 学习
 cover: images/brain.jpg

@@ -2,7 +2,7 @@
 title: NAS 挂载笔记
 date: 2025-08-05 00:00:00
 tags:
-  - NAS
+  - 工具
 categories:
   - 实践
 cover: images/delivery.jpeg

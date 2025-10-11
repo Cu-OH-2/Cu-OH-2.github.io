@@ -2,7 +2,7 @@
 title: Git 学习笔记
 date: 2024-06-16 00:00:00
 tags:
-  - Git
+  - 工具
 categories:
   - 学习
 cover: images/brain.jpg
