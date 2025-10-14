@@ -54,6 +54,11 @@ touch /home/lxy/nas/test.txt  # 测试写入权限
 ### 4. 再次挂载
 如果服务器重启了，需要重新挂载。
 
+### 5. 取消挂载
+```bash
+sudo umount /home/lxy/nas
+```
+
 ## 在个人电脑上挂载NAS（MacOS）
 右键“访达” - 连接服务器 - 输入 `**.**.*.***` - 输入用户名和密码 - 选择 `personal_folder`
 

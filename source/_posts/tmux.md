@@ -24,7 +24,7 @@ tmux的用户级配置文件为 `~/.tmux.conf`，在其中可以进行详细的�
 - 创建会话：`tmux new -s <name>`
 - 列出会话：`tmux ls`
 - 连接会话：`tmux at -t <name>`
-- 删除会话：`tmux kill -t <name>`
+- 删除会话：`tmux kill-session -t <name>`
 - 重命名当前会话：`tmux rename <name>`
 - 退出当前会话：`tmux det`（前缀键+d）
 
