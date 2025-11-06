@@ -125,8 +125,8 @@ navbar:
 footer:
   # 显示在页脚部分右侧的链接
   links:
-    icon: fab fa-github
-    url: "https://github.com/Cu-OH-2"
+    # icon: fab fa-github
+    # url: "https://github.com/Cu-OH-2"
 
 # 文章相关配置
 article:
