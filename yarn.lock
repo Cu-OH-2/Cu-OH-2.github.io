@@ -1859,10 +1859,10 @@ hexo@^7.1.1:
     titlecase "^1.1.3"
     warehouse "^5.0.1"
 
-hexo@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/hexo/-/hexo-8.1.0.tgz#73f9d4ecd7a1b8d77e9bf4dda664e62b63aef7d1"
-  integrity sha512-4t7oqGBGDfjCk1oFqJaKrzcWzjS7QlPQrP0PGwvsNeEpwjrSMV4pXlcZ3V49j/LGX2UE2NjtDyiYENBQCZFajw==
+hexo@^8.1.1:
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/hexo/-/hexo-8.1.1.tgz#fecd2e64b3eaaf281e49bcf82664871277d4114e"
+  integrity sha512-UnzT4ImjKzMMuVRsvudxrl7MkdZwKe4S9xJN5pQPK9c+K0G+fLFb9kB6CqZZwj2E5ne+QK0ls4XMKqTUbNR3RQ==
   dependencies:
     abbrev "^3.0.0"
     bluebird "^3.7.2"
